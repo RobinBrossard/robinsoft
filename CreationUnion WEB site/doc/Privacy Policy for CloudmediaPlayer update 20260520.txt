@@ -1,0 +1,40 @@
+Privacy Policy for CloudMediaPlayer
+Effective Date: May 20, 2026
+
+This Privacy Policy describes how CloudMediaPlayer 2025 ("we", "our", or "us") collects, uses, and discloses your information when you use our mobile application (the "App"). We are committed to protecting your privacy.
+
+1. Information We Collect
+We collect minimal data necessary to provide the App's functionality:
+
+Account Information: If you choose to log in, basic profile information (display name, email) is stored locally.
+
+Cloud Drive Credentials: We receive OAuth tokens for third-party cloud services (Google Drive, OneDrive, etc.). We do not access or store your passwords.
+
+Device & Performance Data: We collect anonymous performance data and crash logs to improve app stability.
+
+2. Data Security & Protection
+We take the security of your data seriously and implement robust measures to protect your sensitive information:
+
+Encryption at Rest: Sensitive authentication data, including Cloud OAuth tokens and App User credentials, are stored locally on your device using the Android Keystore system with AES-GCM encryption. This ensures that your credentials cannot be accessed by unauthorized parties or other applications.
+
+Private Sandbox Storage: All downloaded media files (videos, images, music) are stored exclusively in the application's private, sandbox-protected directories on your device. These directories are isolated by the Android system, ensuring that only our App has access to the stored media.
+
+Data Minimization: We do not upload, scan, share, or sell your personal media content (videos, photos) to our servers. All media processing and playback occur entirely locally on your device.
+
+Secure Deletion: When you remove a media file through the App interface or uninstall the application, the associated data and local files are securely deleted from your device.
+
+3. How We Use Your Information
+To Provide Features: To play videos and display images from your selected cloud storage services.
+
+No Server Uploads: We do not upload your personal files, photos, videos, or cloud drive login credentials to our own servers.
+
+4. Third-Party Services
+Cloud Providers: The App acts as a client to your selected cloud services (e.g., Google Drive). Your interaction with them is governed by their respective privacy policies.
+
+Advertising & Services: We use Google AdMob for monetization and Google Play Services for core functionality.
+
+5. Children’s Privacy
+These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13.
+
+6. Contact Us
+If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at: robinsoft.test01@gmail.com
