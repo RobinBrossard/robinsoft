@@ -20,15 +20,15 @@
       <div class="policy-hero">
         <span class="policy-badge">CloudMediaPlayer • 隐私政策</span>
         <h1>隐私政策</h1>
-        <p>生效日期：2026 年 5 月 20 日</p>
-        <p>本隐私政策说明当您使用我们的移动应用时，CloudMediaPlayer 2025 如何收集、使用和披露您的信息。</p>
+        <p>生效日期：2026 年 5 月 21 日</p>
+        <p>本隐私政策说明当您使用我们的移动应用（“App”）时，Cloud Media Player（“我们”“我们的”或“本应用”）如何收集、使用、存储和共享信息。本政策反映了 App 当前的实现方式，并面向最终用户编写。</p>
       </div>
 
       <div class="policy-content">
         <div class="policy-summary" aria-label="隐私政策摘要">
-          <div class="summary-card"><strong>我们收集</strong>的仅是为提供应用功能所必需的最少数据。</div>
-          <div class="summary-card"><strong>我们会在您的设备上</strong>本地保存凭据和下载的媒体，并进行保护。</div>
-          <div class="summary-card"><strong>我们不会将</strong>您的个人媒体或云端登录凭据上传到我们的服务器。</div>
+          <div class="summary-card"><strong>我们收集</strong>的仅是提供 App 功能所需的信息。</div>
+          <div class="summary-card"><strong>我们会将</strong>应用账号数据、云端令牌和媒体内容保存在您设备上的本地加密与应用私有存储中。</div>
+          <div class="summary-card"><strong>我们不会通过</strong>由我们拥有的中介服务器传输您的个人信息或敏感令牌。</div>
         </div>
 
         <div class="policy-link-row policy-footer-links" aria-label="快速链接">
@@ -39,68 +39,108 @@
         </div>
 
         <section class="policy-section">
-          <h2>1. 我们收集的信息</h2>
-          <p>我们收集为提供应用功能所必需的最少数据：</p>
+          <h2>1. 我们收集和处理的信息</h2>
+          <p>我们仅处理提供 App 功能所需的信息。</p>
 
           <div class="policy-grid">
             <div class="policy-card">
-              <h3>您提供的信息</h3>
+              <h3>1.1 App 账号信息</h3>
               <ul class="policy-list">
-                <li><strong>账号信息：</strong>如果您选择登录，显示名称和电子邮件地址等基本资料会存储在本地。</li>
-                <li><strong>云盘凭据：</strong>我们会接收第三方云服务（如 Google Drive 和 OneDrive）的 OAuth 令牌。我们不会访问或存储您的密码。</li>
+                <li>如果您选择使用 Google 账号登录，我们可能会处理您的 Google 账号标识、电子邮件地址、显示名称、用于登录和账号绑定的 OAuth 令牌，以及用于本地账号绑定的 App 账号 ID。</li>
+                <li>我们使用这些信息用于您登录、维持会话、绑定 VIP / 许可证状态，并将您的 App 账号与设备上的其他账号区分开来。</li>
+                <li>我们仅请求这些功能所需的最小 Google OAuth 授权范围，包括：<code>openid</code>、<code>email</code>、<code>profile</code>、<code>https://www.googleapis.com/auth/drive.appdata</code>、<code>https://www.googleapis.com/auth/drive.readonly</code>、<code>https://www.googleapis.com/auth/userinfo.email</code> 和 <code>https://www.googleapis.com/auth/userinfo.profile</code>。</li>
               </ul>
             </div>
             <div class="policy-card">
-              <h3>自动收集的信息</h3>
+              <h3>1.2 云盘账号信息</h3>
               <ul class="policy-list">
-                <li><strong>设备与性能数据：</strong>我们会收集匿名性能数据和崩溃日志，以改进应用稳定性。</li>
+                <li>如果您连接 Google Drive、OneDrive、Dropbox 或百度网盘等云服务提供商，我们可能会处理提供商名称、云用户 ID、OAuth 访问令牌和刷新令牌、云端文件夹路径和文件标识符，以及缓存的目录信息。</li>
+                <li>我们仅将这些信息用于列出您的文件、同步媒体库、解析路径以及下载您选择访问的内容。</li>
+              </ul>
+            </div>
+            <div class="policy-card">
+              <h3>1.3 媒体元数据</h3>
+              <ul class="policy-list">
+                <li>我们处理的媒体元数据包括：文件名、云端路径、云服务提供商、文件大小、媒体类型、云端创建时间、本地文件路径、可用状态、播放与收藏计数、不支持设备状态，以及存在时的媒体信息数据。</li>
+                <li>我们使用这些信息来展示您的媒体库、管理播放，并支持下载和清理操作。</li>
+              </ul>
+            </div>
+            <div class="policy-card">
+              <h3>1.4 诊断日志</h3>
+              <ul class="policy-list">
+                <li>App 可能会创建本地崩溃日志和诊断日志，以帮助排查问题。</li>
+                <li>我们不会有意在诊断日志中包含明文密码、OAuth 令牌、真实姓名或其他敏感个人信息。</li>
               </ul>
             </div>
           </div>
         </section>
 
         <section class="policy-section">
-          <h2>2. 数据安全与保护</h2>
+          <h2>2. 我们如何存储和保护信息</h2>
           <ul class="policy-list">
-            <li><strong>静态加密：</strong>包括云端 OAuth 令牌和应用用户凭据在内的敏感身份验证数据，会使用 Android Keystore 系统和 AES-GCM 加密存储在您的设备本地。</li>
-            <li><strong>私有沙盒存储：</strong>所有下载的媒体文件（包括视频、图片和音乐）都仅存储在您设备上应用的私有、受沙盒保护的目录中。</li>
-            <li><strong>数据最小化：</strong>我们不会将您的个人媒体内容上传、扫描、共享或出售给我们的服务器。所有媒体处理和播放都完全在您的设备本地进行。</li>
-            <li><strong>安全删除：</strong>当您在应用界面中移除媒体文件或卸载应用时，相关数据和本地文件会从您的设备上被安全删除。</li>
+            <li><strong>2.1 加密的应用配置文件存储：</strong>App 账号令牌及相关的 App 配置文件数据会存储在您设备上的加密本地文件中：<code>device_owner_profile.enc</code>。该文件保存在 App 的私有内部存储中，并使用 Android Keystore 和 AES-GCM 加密保护。</li>
+            <li><strong>2.2 云盘账号数据：</strong>云盘令牌和缓存的目录数据会存储在 App 的加密配置文件结构中，并与其他应用数据分开保存。</li>
+            <li><strong>2.3 许可证 / VIP 数据：</strong>本地 VIP / 许可证状态存储在应用私有的 <code>SharedPreferences</code> 中，仅用于应用侧资格检查。</li>
+            <li><strong>2.4 媒体元数据：</strong>媒体元数据存储在 App 本地数据库中，并位于应用私有存储内。</li>
+            <li><strong>2.5 已下载媒体文件：</strong>已下载的媒体文件存储在 App 的外部应用专用存储中，并按云服务提供商分类整理。App 在下载过程中还会使用临时的 <code>.part</code> 文件以支持自动续传。已下载媒体文件不会放入公共下载文件夹，且当前实现不会为已下载媒体文件增加内容级加密。</li>
+            <li><strong>2.6 应用内消息状态：</strong>App 会存储一个较小的本地水印值，用于控制系统通知是否应针对应用内消息显示。</li>
+            <li><strong>2.7 内存缓存：</strong>App 可能会临时在内存中保留部分值，以减少对磁盘和 Keystore 的重复访问。这些内存缓存仅限于进程内使用，不用于长期存储。</li>
           </ul>
         </section>
 
         <section class="policy-section">
           <h2>3. 我们如何使用您的信息</h2>
           <ul class="policy-list">
-            <li><strong>提供功能：</strong>播放您所选云存储服务中的视频并显示图片。</li>
-            <li><strong>不上传到服务器：</strong>我们不会将您的个人文件、照片、视频或云盘登录凭据上传到我们自己的服务器。</li>
+            <li>登录并保持您的会话活跃。</li>
+            <li>管理 VIP / 许可证状态。</li>
+            <li>连接您选择的云服务提供商。</li>
+            <li>显示并同步您的媒体库。</li>
+            <li>下载并播放您选择访问的媒体。</li>
+            <li>处理 App 内消息通知。</li>
+            <li>排查问题并提升稳定性。</li>
           </ul>
         </section>
 
         <section class="policy-section">
-          <h2>4. 第三方服务</h2>
-          <p>云服务提供商：本应用作为您所选云服务（例如 Google Drive）的客户端。您与这些服务之间的交互受其各自隐私政策约束。</p>
-          <div class="policy-callout">
-            <strong>广告与服务：</strong>我们使用 Google AdMob 进行商业变现，并使用 Google Play Services 提供核心功能。
+          <h2>4. 数据传输和第三方</h2>
+          <div class="policy-grid">
+            <div class="policy-card">
+              <h3>4.1 直接访问云服务</h3>
+              <p>App 作为云服务提供商 API 的直接客户端。任何个人信息或敏感令牌都不会经由、由我们处理，或存储在由我们拥有的中介第三方服务器上。</p>
+            </div>
+            <div class="policy-card">
+              <h3>4.2 云服务提供商</h3>
+              <p>您与 Google Drive、OneDrive、Dropbox、百度网盘及其他所选服务提供商之间的交互，受其各自的隐私政策和条款约束。</p>
+            </div>
+            <div class="policy-card">
+              <h3>4.3 Google Play Billing</h3>
+              <p>如果您购买 VIP 或订阅功能，购买验证将通过 Google Play Billing 库处理。</p>
+            </div>
+            <div class="policy-card">
+              <h3>4.4 不出售个人数据</h3>
+              <p>我们不会出售或出租您的个人信息。</p>
+            </div>
           </div>
         </section>
 
         <section class="policy-section">
-          <h2>5. 儿童隐私</h2>
+          <h2>5. 数据保留与删除</h2>
           <ul class="policy-list">
-            <li>这些服务不面向 13 岁以下用户。</li>
-            <li>我们不会故意收集 13 岁以下儿童的可识别个人信息。</li>
+            <li><strong>5.1 退出登录或清除应用数据：</strong>当您退出 App 或通过系统设置清除应用数据时，已在本地缓存的 OAuth 令牌、账号凭据和许可证数据会从设备中被安全清除。</li>
+            <li><strong>5.2 移除已下载文件：</strong>如果您通过 App 移除媒体文件或卸载 App，相关本地文件和缓存数据将根据 App 的清理逻辑以及 Android 的存储行为被删除。</li>
+            <li><strong>5.3 撤销云账号授权：</strong>您可以随时通过服务提供商的账号设置撤销 App 对您的 Google 账号或其他云服务提供商的访问权限。</li>
           </ul>
         </section>
 
         <section class="policy-section">
-          <h2>6. 本隐私政策的变更</h2>
-          <p>我们可能会不时更新本隐私政策。建议您定期查看本页面以了解任何变更。</p>
+          <h2>6. 儿童隐私</h2>
+          <p>App 不面向 13 岁以下儿童，我们不会有意收集 13 岁以下儿童的个人信息。</p>
         </section>
 
         <section class="policy-section">
           <h2>7. 联系我们</h2>
-          <p>如果您对我们的隐私政策有任何问题或建议，请通过 <strong>robinsoft.test01@gmail.com</strong> 联系我们。</p>
+          <p>如果您对本隐私政策有任何问题，或希望提交数据删除请求，请通过以下方式联系我们：</p>
+          <p><strong>robinsoft.test01@gmail.com</strong></p>
         </section>
       </div>
     </section>

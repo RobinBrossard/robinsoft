@@ -20,15 +20,15 @@
       <div class="policy-hero">
         <span class="policy-badge">CloudMediaPlayer • Privacy Policy</span>
         <h1>Privacy Policy</h1>
-        <p>Effective Date: May 20, 2026</p>
-        <p>This Privacy Policy describes how CloudMediaPlayer 2025 collects, uses, and discloses your information when you use our mobile application.</p>
+        <p>Effective Date: May 21, 2026</p>
+        <p>This Privacy Policy explains how Cloud Media Player ("we", "our", or "us") collects, uses, stores, and shares information when you use our mobile application (the "App"). This policy reflects the App's current implementation and is written for end users.</p>
       </div>
 
       <div class="policy-content">
         <div class="policy-summary" aria-label="Privacy policy summary">
-          <div class="summary-card"><strong>We collect</strong> only the minimal data needed to provide the App's functionality.</div>
-          <div class="summary-card"><strong>We store</strong> credentials and downloaded media locally and protect them on your device.</div>
-          <div class="summary-card"><strong>We do not upload</strong> your personal media or cloud login credentials to our servers.</div>
+          <div class="summary-card"><strong>We collect</strong> only the information needed to provide the App's features.</div>
+          <div class="summary-card"><strong>We store</strong> app profile data, cloud tokens, and media locally on your device with encryption and app-private storage.</div>
+          <div class="summary-card"><strong>We do not route</strong> your personal information or sensitive tokens through intermediary servers owned by us.</div>
         </div>
 
         <div class="policy-link-row policy-footer-links" aria-label="Quick links">
@@ -39,68 +39,108 @@
         </div>
 
         <section class="policy-section">
-          <h2>1. Information We Collect</h2>
-          <p>We collect minimal data necessary to provide the App's functionality:</p>
+          <h2>1. Information We Collect and Process</h2>
+          <p>We process only the information needed to provide the App's features.</p>
 
           <div class="policy-grid">
             <div class="policy-card">
-              <h3>Information you provide</h3>
+              <h3>1.1 App account information</h3>
               <ul class="policy-list">
-                <li><strong>Account information:</strong> If you choose to log in, basic profile information such as your display name and email address is stored locally.</li>
-                <li><strong>Cloud drive credentials:</strong> We receive OAuth tokens for third-party cloud services such as Google Drive and OneDrive. We do not access or store your passwords.</li>
+                <li>If you choose to sign in with a Google account, we may process your Google account identifier, email address, display name, OAuth tokens used for sign-in and account binding, and an app-account ID used for local account binding.</li>
+                <li>We use this information to sign you in, maintain your session, bind VIP / license status, and keep your app account separate from other accounts on the device.</li>
+                <li>We request only the minimum Google OAuth scopes needed for these features, including: <code>openid</code>, <code>email</code>, <code>profile</code>, <code>https://www.googleapis.com/auth/drive.appdata</code>, <code>https://www.googleapis.com/auth/drive.readonly</code>, <code>https://www.googleapis.com/auth/userinfo.email</code>, and <code>https://www.googleapis.com/auth/userinfo.profile</code>.</li>
               </ul>
             </div>
             <div class="policy-card">
-              <h3>Information collected automatically</h3>
+              <h3>1.2 Cloud drive account information</h3>
               <ul class="policy-list">
-                <li><strong>Device &amp; performance data:</strong> We collect anonymous performance data and crash logs to improve app stability.</li>
+                <li>If you connect a cloud provider such as Google Drive, OneDrive, Dropbox, or Baidu Netdisk, we may process provider name, cloud user ID, OAuth access and refresh tokens, cloud folder paths and file identifiers, and cached directory information.</li>
+                <li>We use this information only to list your files, synchronize your media library, resolve paths, and download content you choose to access.</li>
+              </ul>
+            </div>
+            <div class="policy-card">
+              <h3>1.3 Media metadata</h3>
+              <ul class="policy-list">
+                <li>We process media metadata such as file name, cloud path, cloud provider, file size, media type, cloud creation time, local file path, availability status, playback and favorite counters, unsupported-device status, and media info data when present.</li>
+                <li>We use this information to display your library, manage playback, and support download and cleanup operations.</li>
+              </ul>
+            </div>
+            <div class="policy-card">
+              <h3>1.4 Diagnostic logs</h3>
+              <ul class="policy-list">
+                <li>The App may create local crash logs and diagnostic logs to help with troubleshooting.</li>
+                <li>We do not intentionally include plaintext passwords, OAuth tokens, real names, or other sensitive personal information in diagnostic logs.</li>
               </ul>
             </div>
           </div>
         </section>
 
         <section class="policy-section">
-          <h2>2. Data Security &amp; Protection</h2>
+          <h2>2. How We Store and Protect Information</h2>
           <ul class="policy-list">
-            <li><strong>Encryption at rest:</strong> Sensitive authentication data, including cloud OAuth tokens and app user credentials, are stored locally on your device using the Android Keystore system with AES-GCM encryption.</li>
-            <li><strong>Private sandbox storage:</strong> All downloaded media files, including videos, images, and music, are stored exclusively in the application's private, sandbox-protected directories on your device.</li>
-            <li><strong>Data minimization:</strong> We do not upload, scan, share, or sell your personal media content to our servers. All media processing and playback occur entirely locally on your device.</li>
-            <li><strong>Secure deletion:</strong> When you remove a media file through the App interface or uninstall the application, the associated data and local files are securely deleted from your device.</li>
+            <li><strong>2.1 Encrypted app profile storage:</strong> App account tokens and related app profile data are stored in an encrypted local file on your device: <code>device_owner_profile.enc</code>. It is kept in the App's private internal storage and protected with Android Keystore and AES-GCM encryption.</li>
+            <li><strong>2.2 Cloud account data:</strong> Cloud drive tokens and cached directory data are stored inside the App's encrypted profile structure and kept separate from other app data.</li>
+            <li><strong>2.3 License / VIP data:</strong> Local VIP / license state is stored in app-private <code>SharedPreferences</code> and used only for app-side eligibility checks.</li>
+            <li><strong>2.4 Media metadata:</strong> Media metadata is stored in the App's local database inside app-private storage.</li>
+            <li><strong>2.5 Downloaded media files:</strong> Downloaded media files are stored in the App's external app-specific storage, organized by cloud provider. The App also uses temporary <code>.part</code> files during download to support automatic resume. Downloaded media files are not placed in public download folders, and the current implementation does not add content-level encryption to downloaded media files.</li>
+            <li><strong>2.6 In-app message state:</strong> The App stores a small local watermark value used to control whether a system notification should be shown for an in-app message.</li>
+            <li><strong>2.7 Memory caching:</strong> The App may keep some values in memory temporarily to reduce repeated disk and keystore access. These in-memory caches are process-local and are not intended as permanent storage.</li>
           </ul>
         </section>
 
         <section class="policy-section">
           <h2>3. How We Use Your Information</h2>
           <ul class="policy-list">
-            <li><strong>To provide features:</strong> To play videos and display images from your selected cloud storage services.</li>
-            <li><strong>No server uploads:</strong> We do not upload your personal files, photos, videos, or cloud drive login credentials to our own servers.</li>
+            <li>Sign you in and keep your session active.</li>
+            <li>Manage VIP / license status.</li>
+            <li>Connect to your selected cloud providers.</li>
+            <li>Display and synchronize your media library.</li>
+            <li>Download and play media you choose to access.</li>
+            <li>Handle message notifications inside the App.</li>
+            <li>Troubleshoot issues and improve stability.</li>
           </ul>
         </section>
 
         <section class="policy-section">
-          <h2>4. Third-Party Services</h2>
-          <p>Cloud providers: The App acts as a client to your selected cloud services, such as Google Drive. Your interaction with them is governed by their respective privacy policies.</p>
-          <div class="policy-callout">
-            <strong>Advertising &amp; services:</strong> We use Google AdMob for monetization and Google Play Services for core functionality.
+          <h2>4. Data Transmission and Third Parties</h2>
+          <div class="policy-grid">
+            <div class="policy-card">
+              <h3>4.1 Direct cloud access</h3>
+              <p>The App acts as a direct client to the cloud provider's API. No personal information or sensitive tokens are routed through, processed by, or stored on intermediary third-party servers owned by us.</p>
+            </div>
+            <div class="policy-card">
+              <h3>4.2 Cloud providers</h3>
+              <p>Your interactions with Google Drive, OneDrive, Dropbox, Baidu Netdisk, and other selected providers are governed by their own privacy policies and terms.</p>
+            </div>
+            <div class="policy-card">
+              <h3>4.3 Google Play Billing</h3>
+              <p>If you purchase VIP or subscription features, purchase validation is handled through the Google Play Billing library.</p>
+            </div>
+            <div class="policy-card">
+              <h3>4.4 No sale of personal data</h3>
+              <p>We do not sell or rent your personal information.</p>
+            </div>
           </div>
         </section>
 
         <section class="policy-section">
-          <h2>5. Children’s Privacy</h2>
+          <h2>5. Data Retention and Deletion</h2>
           <ul class="policy-list">
-            <li>These Services do not address anyone under the age of 13.</li>
-            <li>We do not knowingly collect personally identifiable information from children under 13.</li>
+            <li><strong>5.1 Logging out or clearing app data:</strong> When you log out of the App or clear app data through system settings, locally cached OAuth tokens, account credentials, and license data are securely erased from the device.</li>
+            <li><strong>5.2 Removing downloaded files:</strong> If you remove a media file through the App or uninstall the App, the associated local files and cache data are removed according to the App's cleanup logic and Android's storage behavior.</li>
+            <li><strong>5.3 Cloud account revocation:</strong> You can revoke the App's access to your Google account or other cloud providers at any time through the provider's account settings.</li>
           </ul>
         </section>
 
         <section class="policy-section">
-          <h2>6. Changes to This Privacy Policy</h2>
-          <p>We may update this Privacy Policy from time to time. You are advised to review this page periodically for any changes.</p>
+          <h2>6. Children’s Privacy</h2>
+          <p>The App is not directed to children under 13, and we do not knowingly collect personal information from children under 13.</p>
         </section>
 
         <section class="policy-section">
           <h2>7. Contact Us</h2>
-          <p>If you have any questions or suggestions about our Privacy Policy, please contact us at <strong>robinsoft.test01@gmail.com</strong>.</p>
+          <p>If you have questions about this Privacy Policy or wish to submit a data deletion request, please contact us at:</p>
+          <p><strong>robinsoft.test01@gmail.com</strong></p>
         </section>
       </div>
     </section>

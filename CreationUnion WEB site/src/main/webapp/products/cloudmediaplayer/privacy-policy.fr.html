@@ -20,15 +20,15 @@
       <div class="policy-hero">
         <span class="policy-badge">CloudMediaPlayer • Politique de confidentialité</span>
         <h1>Politique de confidentialité</h1>
-        <p>Date d'entrée en vigueur : 20 mai 2026</p>
-        <p>Cette politique de confidentialité décrit comment CloudMediaPlayer 2025 collecte, utilise et divulgue vos informations lorsque vous utilisez notre application mobile.</p>
+        <p>Date d'entrée en vigueur : 21 mai 2026</p>
+        <p>Cette politique de confidentialité explique comment Cloud Media Player (« nous », « notre » ou « nos ») collecte, utilise, stocke et partage des informations lorsque vous utilisez notre application mobile (l'« App »). Cette politique reflète l'implémentation actuelle de l'App et est rédigée pour les utilisateurs finaux.</p>
       </div>
 
       <div class="policy-content">
         <div class="policy-summary" aria-label="Résumé de la politique de confidentialité">
-          <div class="summary-card"><strong>Nous collectons</strong> uniquement les données minimales nécessaires au fonctionnement de l'application.</div>
-          <div class="summary-card"><strong>Nous stockons</strong> les identifiants et les médias téléchargés localement et les protégeons sur votre appareil.</div>
-          <div class="summary-card"><strong>Nous ne téléversons pas</strong> vos médias personnels ni vos identifiants de connexion cloud vers nos serveurs.</div>
+          <div class="summary-card"><strong>Nous collectons</strong> uniquement les informations nécessaires aux fonctionnalités de l'App.</div>
+          <div class="summary-card"><strong>Nous stockons</strong> les données du profil, les jetons cloud et les médias localement sur votre appareil dans un stockage chiffré et privé.</div>
+          <div class="summary-card"><strong>Nous ne faisons pas transiter</strong> vos informations personnelles ou vos jetons sensibles via des serveurs intermédiaires nous appartenant.</div>
         </div>
 
         <div class="policy-link-row policy-footer-links" aria-label="Liens rapides">
@@ -39,68 +39,108 @@
         </div>
 
         <section class="policy-section">
-          <h2>1. Informations que nous collectons</h2>
-          <p>Nous collectons les données minimales nécessaires pour fournir les fonctionnalités de l'application :</p>
+          <h2>1. Informations que nous collectons et traitons</h2>
+          <p>Nous ne traitons que les informations nécessaires aux fonctionnalités de l'App.</p>
 
           <div class="policy-grid">
             <div class="policy-card">
-              <h3>Informations fournies par vous</h3>
+              <h3>1.1 Informations du compte App</h3>
               <ul class="policy-list">
-                <li><strong>Informations de compte :</strong> si vous choisissez de vous connecter, des informations de profil de base comme votre nom d'affichage et votre adresse e-mail sont stockées localement.</li>
-                <li><strong>Identifiants de service cloud :</strong> nous recevons des jetons OAuth pour des services cloud tiers tels que Google Drive et OneDrive. Nous n'accédons pas à vos mots de passe et ne les stockons pas.</li>
+                <li>Si vous choisissez de vous connecter avec un compte Google, nous pouvons traiter votre identifiant de compte Google, votre adresse e-mail, votre nom d'affichage, les jetons OAuth utilisés pour la connexion et la liaison du compte, ainsi qu'un identifiant de compte App utilisé pour la liaison locale du compte.</li>
+                <li>Nous utilisons ces informations pour vous connecter, maintenir votre session, associer l'état VIP / licence et garder votre compte App séparé des autres comptes présents sur l'appareil.</li>
+                <li>Nous demandons uniquement les étendues OAuth Google minimales nécessaires à ces fonctionnalités, notamment : <code>openid</code>, <code>email</code>, <code>profile</code>, <code>https://www.googleapis.com/auth/drive.appdata</code>, <code>https://www.googleapis.com/auth/drive.readonly</code>, <code>https://www.googleapis.com/auth/userinfo.email</code> et <code>https://www.googleapis.com/auth/userinfo.profile</code>.</li>
               </ul>
             </div>
             <div class="policy-card">
-              <h3>Informations collectées automatiquement</h3>
+              <h3>1.2 Informations du compte cloud</h3>
               <ul class="policy-list">
-                <li><strong>Données de l'appareil et de performance :</strong> nous collectons des données de performance anonymes et des journaux de plantage afin d'améliorer la stabilité de l'application.</li>
+                <li>Si vous connectez un fournisseur cloud tel que Google Drive, OneDrive, Dropbox ou Baidu Netdisk, nous pouvons traiter le nom du fournisseur, l'identifiant utilisateur cloud, les jetons OAuth d'accès et de rafraîchissement, les chemins de dossiers cloud, les identifiants de fichiers et les informations de répertoires mises en cache.</li>
+                <li>Nous utilisons ces informations uniquement pour lister vos fichiers, synchroniser votre bibliothèque multimédia, résoudre les chemins et télécharger le contenu que vous choisissez d'ouvrir.</li>
+              </ul>
+            </div>
+            <div class="policy-card">
+              <h3>1.3 Métadonnées multimédias</h3>
+              <ul class="policy-list">
+                <li>Nous traitons des métadonnées multimédias telles que le nom du fichier, le chemin cloud, le fournisseur cloud, la taille du fichier, le type de média, la date de création cloud, le chemin local, l'état de disponibilité, les compteurs de lecture et de favoris, l'état d'incompatibilité avec l'appareil et, le cas échéant, les données d'informations multimédias.</li>
+                <li>Nous utilisons ces informations pour afficher votre bibliothèque, gérer la lecture et prendre en charge les opérations de téléchargement et de nettoyage.</li>
+              </ul>
+            </div>
+            <div class="policy-card">
+              <h3>1.4 Journaux de diagnostic</h3>
+              <ul class="policy-list">
+                <li>L'App peut créer localement des journaux de plantage et des journaux de diagnostic pour faciliter le dépannage.</li>
+                <li>Nous n'incluons pas intentionnellement de mots de passe en clair, de jetons OAuth, de vrais noms ou d'autres informations personnelles sensibles dans les journaux de diagnostic.</li>
               </ul>
             </div>
           </div>
         </section>
 
         <section class="policy-section">
-          <h2>2. Sécurité et protection des données</h2>
+          <h2>2. Comment nous stockons et protégeons les informations</h2>
           <ul class="policy-list">
-            <li><strong>Chiffrement au repos :</strong> les données d'authentification sensibles, y compris les jetons OAuth cloud et les identifiants de l'application, sont stockées localement sur votre appareil à l'aide du système Android Keystore avec un chiffrement AES-GCM.</li>
-            <li><strong>Stockage privé isolé :</strong> tous les fichiers multimédias téléchargés, y compris les vidéos, images et musiques, sont stockés exclusivement dans les répertoires privés et protégés par le bac à sable de l'application sur votre appareil.</li>
-            <li><strong>Minimisation des données :</strong> nous ne téléversons pas, ne scannons pas, ne partageons pas et ne vendons pas votre contenu multimédia personnel à nos serveurs. Tout le traitement et la lecture des médias s'effectuent entièrement localement sur votre appareil.</li>
-            <li><strong>Suppression sécurisée :</strong> lorsque vous supprimez un fichier multimédia depuis l'interface de l'application ou que vous désinstallez l'application, les données associées et les fichiers locaux sont supprimés de manière sécurisée de votre appareil.</li>
+            <li><strong>2.1 Stockage chiffré du profil App :</strong> les jetons du compte App et les données associées du profil App sont stockés dans un fichier local chiffré sur votre appareil : <code>device_owner_profile.enc</code>. Il est conservé dans le stockage interne privé de l'App et protégé par Android Keystore et le chiffrement AES-GCM.</li>
+            <li><strong>2.2 Données du compte cloud :</strong> les jetons cloud et les données de répertoires mises en cache sont stockés dans la structure de profil chiffrée de l'App et restent séparés des autres données de l'application.</li>
+            <li><strong>2.3 Données de licence / VIP :</strong> l'état local VIP / licence est stocké dans <code>SharedPreferences</code> privées à l'application et utilisé uniquement pour les vérifications d'éligibilité côté application.</li>
+            <li><strong>2.4 Métadonnées multimédias :</strong> les métadonnées multimédias sont stockées dans la base de données locale de l'App, dans un espace privé de l'application.</li>
+            <li><strong>2.5 Fichiers multimédias téléchargés :</strong> les fichiers multimédias téléchargés sont stockés dans le stockage externe spécifique à l'application, organisé par fournisseur cloud. L'App utilise également des fichiers temporaires <code>.part</code> pendant le téléchargement afin de permettre la reprise automatique. Les fichiers téléchargés ne sont pas placés dans des dossiers de téléchargement publics, et l'implémentation actuelle n'ajoute pas de chiffrement du contenu aux fichiers multimédias téléchargés.</li>
+            <li><strong>2.6 État des messages intégrés :</strong> l'App stocke une petite valeur locale de marquage utilisée pour contrôler l'affichage ou non d'une notification système pour un message intégré à l'App.</li>
+            <li><strong>2.7 Mise en cache en mémoire :</strong> l'App peut conserver temporairement certaines valeurs en mémoire afin de réduire les accès répétés au disque et au keystore. Ces caches mémoire sont locaux au processus et ne sont pas destinés à un stockage permanent.</li>
           </ul>
         </section>
 
         <section class="policy-section">
           <h2>3. Comment nous utilisons vos informations</h2>
           <ul class="policy-list">
-            <li><strong>Pour fournir les fonctionnalités :</strong> lire des vidéos et afficher des images depuis vos services de stockage cloud sélectionnés.</li>
-            <li><strong>Aucun téléversement vers nos serveurs :</strong> nous ne téléversons pas vos fichiers personnels, photos, vidéos ou identifiants de connexion cloud vers nos propres serveurs.</li>
+            <li>Vous connecter et maintenir votre session active.</li>
+            <li>Gérer l'état VIP / licence.</li>
+            <li>Se connecter aux fournisseurs cloud que vous avez sélectionnés.</li>
+            <li>Afficher et synchroniser votre bibliothèque multimédia.</li>
+            <li>Télécharger et lire les médias que vous choisissez d'ouvrir.</li>
+            <li>Gérer les notifications de messages dans l'App.</li>
+            <li>Résoudre les problèmes et améliorer la stabilité.</li>
           </ul>
         </section>
 
         <section class="policy-section">
-          <h2>4. Services tiers</h2>
-          <p>Fournisseurs cloud : l'application agit comme client pour les services cloud que vous sélectionnez, par exemple Google Drive. Votre utilisation de ces services est régie par leurs propres politiques de confidentialité.</p>
-          <div class="policy-callout">
-            <strong>Publicité et services :</strong> nous utilisons Google AdMob pour la monétisation et Google Play Services pour les fonctionnalités principales.
+          <h2>4. Transmission des données et tiers</h2>
+          <div class="policy-grid">
+            <div class="policy-card">
+              <h3>4.1 Accès direct au cloud</h3>
+              <p>L'App agit comme un client direct de l'API du fournisseur cloud. Aucune information personnelle ni jeton sensible n'est acheminé, traité ou stocké sur des serveurs intermédiaires tiers nous appartenant.</p>
+            </div>
+            <div class="policy-card">
+              <h3>4.2 Fournisseurs cloud</h3>
+              <p>Vos interactions avec Google Drive, OneDrive, Dropbox, Baidu Netdisk et d'autres fournisseurs sélectionnés sont régies par leurs propres politiques de confidentialité et conditions.</p>
+            </div>
+            <div class="policy-card">
+              <h3>4.3 Google Play Billing</h3>
+              <p>Si vous achetez des fonctionnalités VIP ou par abonnement, la validation de l'achat est gérée via la bibliothèque Google Play Billing.</p>
+            </div>
+            <div class="policy-card">
+              <h3>4.4 Aucune vente de données personnelles</h3>
+              <p>Nous ne vendons ni ne louons vos informations personnelles.</p>
+            </div>
           </div>
         </section>
 
         <section class="policy-section">
-          <h2>5. Confidentialité des enfants</h2>
+          <h2>5. Conservation et suppression des données</h2>
           <ul class="policy-list">
-            <li>Ces services ne s'adressent pas aux personnes de moins de 13 ans.</li>
-            <li>Nous ne collectons pas sciemment d'informations personnelles identifiables auprès d'enfants de moins de 13 ans.</li>
+            <li><strong>5.1 Déconnexion ou effacement des données de l'App :</strong> lorsque vous vous déconnectez de l'App ou effacez les données de l'App via les paramètres système, les jetons OAuth mis en cache localement, les identifiants de compte et les données de licence sont supprimés en toute sécurité de l'appareil.</li>
+            <li><strong>5.2 Suppression des fichiers téléchargés :</strong> si vous supprimez un fichier multimédia via l'App ou si vous désinstallez l'App, les fichiers locaux associés et les données de cache sont supprimés conformément à la logique de nettoyage de l'App et au comportement de stockage d'Android.</li>
+            <li><strong>5.3 Révocation du compte cloud :</strong> vous pouvez révoquer à tout moment l'accès de l'App à votre compte Google ou à d'autres fournisseurs cloud via les paramètres de compte du fournisseur.</li>
           </ul>
         </section>
 
         <section class="policy-section">
-          <h2>6. Modifications de cette politique de confidentialité</h2>
-          <p>Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Nous vous conseillons de consulter régulièrement cette page pour prendre connaissance des éventuels changements.</p>
+          <h2>6. Confidentialité des enfants</h2>
+          <p>L'App n'est pas destinée aux enfants de moins de 13 ans, et nous ne collectons pas sciemment d'informations personnelles auprès d'enfants de moins de 13 ans.</p>
         </section>
 
         <section class="policy-section">
           <h2>7. Nous contacter</h2>
-          <p>Si vous avez des questions ou des suggestions au sujet de notre politique de confidentialité, veuillez nous contacter à <strong>robinsoft.test01@gmail.com</strong>.</p>
+          <p>Si vous avez des questions au sujet de cette politique de confidentialité ou souhaitez soumettre une demande de suppression de données, veuillez nous contacter à :</p>
+          <p><strong>robinsoft.test01@gmail.com</strong></p>
         </section>
       </div>
     </section>
