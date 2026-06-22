@@ -1,41 +1,7 @@
 {
-  "messages": [
-    {
-      "message_id": "202605120001",
-      "config": {
-        "type": "announcement",
-        "priority": 1,
-        "display_style": "modal",
-        "start_time": "2026-05-12T19:00:00Z",
-        "end_time": "2026-05-31T23:59:59Z",
-        "can_dismiss": true
-      },
-      "content": {
-        "zh": {
-          "title": "新功能提醒",
-          "body": "我们新增了消息通知功能，点击下方链接即可了解如何使用。",
-          "action_text": "立即查看",
-          "action_url": "https://www.creationunion.com/appnews/message-notification.html"
-        },
-        "en": {
-          "title": "New Feature",
-          "body": "A new messaging feature is now available. Click below to learn more.",
-          "action_text": "Learn More",
-          "action_url": "https://www.creationunion.com/appnews/message-notification.html"
-        },
-        "fr": {
-          "title": "Nouvelle fonctionnalité",
-          "body": "Une nouvelle fonctionnalité de message est disponible. Cliquez ci-dessous pour en savoir plus.",
-          "action_text": "En savoir plus",
-          "action_url": "https://www.creationunion.com/appnews/message-notification.html"
-        },
-        "zh-tw": {
-          "title": "新功能提醒",
-          "body": "我們新增了消息通知功能，點擊下方鏈接即可了解如何使用。",
-          "action_text": "立即查看",
-          "action_url": "https://www.creationunion.com/appnews/message-notification.html"
-        }
-      }
-    }
-  ]
+  "encrypted_aes_key": "i/xeR6R1lGQNfT0tZn45+oaNsNYT9AUy+5B/CnMajYYyiYMQ68neXWH59kIwi40Gu0I9h9W49HFPv9sfmVPazLGX1e++m/dg1co40syCKM+L2FSVxMyqK/pGov/tcvSoGUJ47x+wT1KP/QWAkD6NDwwZW3u0UhG+5RhsGHwOBkZAb0H74LUIyg7apuTarHCItm1W3ZD9k22JauPd9L+vBs8DO8xQcXztjZ7Eze/cwZfgB+tGDGOA5+zDZ7rsCgtZRIMEghbTPoofXMdwL42IoNV0TwplpPY79/qCDaouOC95Hvn/yeW3d36GJeXC2x2Ol9EKgsIBBEQv6uames8FQw==",
+  "iv": "YvRIEF78F16QupSO",
+  "encrypted_data": "w9sM5UaZi3gFRXfwuWmUdI4jjtwPw3qOVYgyc1TVkTfsn1qUhP1JBgiyIMTgtaRDkbzao6fr8fO75S3jzXjCLiWMy146Ky5B+GxNckwfhbOZ40YcA83jhwkiC5YdK1s42ZixUoFkuPfPvGT2EXMfGHQvBjzxxm+Dfbg270JpJvOoLpzNMsj6O3cjydm5wfdJHBDjpabmtpKAMroIBCiT0JWi/ksM3dPJRcjMgzawUHqfgEj+08AkZULTw3lZeuzguliEZt4gUlUPNG2CX3yfKgH/iyRDXXvL9I4umw0ZiN8MbN1YuYHpmUu/luDUojDGn+q7auLppvnyBfP7sr9Iu/GmHKF1XQ2sSUfZOHHOgAcqkah6i483GC3iXtAssteTYbH2Q430AiUyv9Nfkeg8QDn+YPDnZlwXXTDcASLC1amgri8Ubr7UzVM5T1sn4LxGAdS9a0ko92vruEpSQ7gsSlzsIFD6ymtD4yL5yBHKr9zmXEwYAtCfSFHVp+gbOVjcTCBygNYUak2zlDrequNfiS7UhGaSwlxSKpHvOpd/1qmLQD+rm/bUJO7UHxgSPQj67qa+Kj3VTkTwB7okr3f4CNlDMIGBVi2dMOPcvrzR3Ml9cCB6Uvc8z/DqYQRqXcm1hYFIoZNtbsFF8MSmSIhi3V2GSolOmRk1kct4q7/krxg10OAzmuKz1spazmblE9iJXuO8cp64gUHDNRyXgn5b6qMWb8F7iLo7ncJ8vRrd4ZcCePNoEe6363JTHTAkgGBhkH39S1SomYIyPs3YAN8KLRhvmNk3leP2vn28dFttf2Y0Q5FYBqa8HN59EwpMBMuKSp//fhRHYmXeZyB8dhh2vKk4oS9ZnwcOYPwSN4XPsQ+RMeaeT311U2x5z5D//e7LO71Sxg/tI+e0E3eDOcvSc0XPj7267YIDXc2Zeilqr95Swm2YMf8SasLAgrzNNIkLB5W8RNDtfb/AbawTjO0tDK+m/cNzPyvzbQUF5TeuljxPIk2uOcMWfiyh+JzmSwpg9xvlbXyMySCTeNxWWm4BCPGgMGw8lssBsmt3tgCPBwOmVoX5Tti2T1hYRMOf37kERk0gp+/50rNy9pJ+MGbsIYMOfeLupYKEQdY3uMph7o0WhhRXQOZVOzeGrkYUwPocLS2l8N8B88igrZTGHJ/yiYPxrPovUU2tMLvNZkGNANoa/zaVLrAWxtYInJmDJRoBSCm/h2Q1EDh6rnG4NWuxmLStvZIKVaWI1MPZ/rCqDZBpq4HQZ6NIsAPVIDJKBRK4dtULQki2kSmq7awgf5OwueDusrDFLvCuhsJpBjDUC35lQRFNAd1FdXUOHuPPgv/Rt1SsLTmm0hHThc3lgyxMSTWg7AP2a1m0ru6V5yjb2rq2ga62FD8tltixOFRXzZrsuZMe9JANvW9p9/deZHtGogtduvjlL3JRVMLcDDicuctIST39jAunTBwxvtX2HDpJ6DVbDw0QZ6e6uGIgxUeAN/BZevPt3/pAKRv4NrQvevSLCZG+IQJh7yXXDOqUr1bDr+dR4s5bHtBpLpaJM+xxqt2viF+ySnAb7A5HenGgy+meE36kCGiVslPyGRxjBb+iZgMfNrPxAZ0cxKXH4g/QlDIiPcE=",
+  "timestamp": 1782102382552,
+  "algorithm": "RSA-2048-OAEP + AES-256-GCM"
 }
