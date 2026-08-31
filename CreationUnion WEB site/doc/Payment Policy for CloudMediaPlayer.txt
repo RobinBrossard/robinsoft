@@ -11,8 +11,8 @@ Priority Support: Faster response times for technical inquiries.
 We offer flexible purchasing options processed exclusively through Google Play Billing:
 Monthly Subscription: A recurring payment charged every month.
 Yearly Subscription: A recurring payment charged every year (offering a discounted rate compared to monthly).
-Lifetime License: A one-time upfront payment. This is a non-consumable product that grants you permanent access to VIP features on the account used for purchase. It does not expire.
-Note on Device Limits: VIP features are available on up to 3 devices per purchase. If you log in to a 4th device, the earliest logged-in device will be automatically disconnected. If you need to use VIP features on more than 3 devices simultaneously, we recommend purchasing through additional Google Play accounts.
+Lifetime License: A one-time upfront payment. This non-consumable product is provisioned and validated through Google Play. VIP entitlement is determined by the purchase/subscription state reported by Google Play on the device and/or the Google Play account present on the device. It does not expire on Google Play unless explicitly revoked by Google Play or the purchaser.
+Note on Device Entitlement: VIP access is granted to devices where Google Play reports a valid VIP subscription or license. The App determines VIP eligibility by checking the local Google Play billing/entitlement state on the device; VIP is not bound to the App's sign-in account. There is no server-enforced limit on the number of devices in the App itself — entitlement follows the subscription/license state as managed by Google Play.
 Prices are displayed locally in the App based on your region and currency settings in the Google Play Store.
 3. Payment Processing & Security
 We Do Not Store Payment Data: CloudMediaPlayer 2025 does not collect, transmit, or store your credit card details or banking information.

@@ -7,15 +7,15 @@ The Ultimate Family Hub: Perfect for families to share memories. Multiple contri
 Key Features
 Cloud Aggregation: VIP members can link multiple accounts from various providers. Free users enjoy one cloud connection at no cost.
 Offline Ready: Download and sync cloud media to local cache. Enjoy smooth playback while saving your data and bandwidth.
-Flexible VIP Plans: Manage subscriptions via Google Play. One VIP account covers up to 3 devices.
+Flexible VIP Plans: Manage subscriptions via Google Play. VIP entitlement is determined by the Google Play subscription/license state on the device; the App checks the local Google Play billing state to grant VIP features rather than binding VIP to the App sign-in account.
 Smart Hardware Detection: Automatically filters out file types that your specific device hardware cannot handle, ensuring a crash-free experience.
 Privacy First: We only access media files in folders you designate. Your documents and personal files remain strictly private.
 
 Getting Started
 1. Setup
 Download CloudMediaPlayer from the Google Play Store.
-Sign In: Use your Google Account for full VIP features.
-Guest Mode: Tap "Skip" to use the app without an account (Note: VIP features and Google Play billing are unavailable in this mode).
+Sign In (optional): You may sign in with a Google account for convenience, but VIP features are granted based on the Google Play subscription/license state present on the device and are not tied to the App sign-in account.
+Guest Mode: Tap "Skip" to use the app without an account. Note: Guest mode can still receive VIP entitlement if the device's Google Play account has an active VIP subscription/license.
 2. Linking Cloud Drives
 Navigate to "Drive Management."
 Tap "Link Drive" and follow the prompts to authorize your accounts.
@@ -43,7 +43,7 @@ Interactive Controls: Tap once to show the control bar. You can Like (👍), Dis
 Auto-Hide: The UI will automatically vanish after a few seconds of inactivity for an immersive viewing experience.
 
 Troubleshooting (FAQ)
-Q: Why isn't my VIP status showing up? A: Ensure you are logged into the same Google Play account used for the purchase.
+Q: Why isn't my VIP status showing up? A: The App determines VIP eligibility from the local Google Play billing/entitlement state on the device. Ensure the Google Play account on this device has an active VIP subscription or license and that Google Play is reachable. If you recently purchased, allow a few moments for Google Play to propagate the entitlement and restart the App if needed.
 Q: Why are some files missing from the app? A: Check your "Ignore Files" settings in System Settings. The app may also hide files that exceed your size limits or use formats your older device cannot decode.
 Q: Why does the image quality seem lower than the original? A: On legacy devices, the app automatically optimizes image resolution to ensure the slideshow runs smoothly without lagging or crashing.
 

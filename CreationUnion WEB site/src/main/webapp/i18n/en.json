@@ -25,5 +25,45 @@
     "linkHelpCenter": "Help Center",
     "linkTermsOfService": "Terms of Service"
   },
+  "vip": {
+    "pageTitle": "VIP Policy Update - CreationUnion",
+    "eyebrow": "MAJOR UPDATE · VIP POLICY",
+    "title": "VIP Policy — Major Update",
+    "hero_copy": "We've removed installation limits: VIP purchases now allow installation on any number of devices. Learn about migration and team distribution.",
+    "btn_learn": "Learn details",
+    "btn_scenarios": "See scenarios",
+    "tag1": "One purchase",
+    "tag2": "Any install",
+    "tag3": "Team sharing",
+    "tag4": "Multi-language",
+    "preview": {
+      "title": "Policy preview",
+      "copy": "VIP policy update: one purchase, any install. Device migration and unlink supported.",
+      "notice": {
+        "title": "VIP Policy Notice",
+        "meta": "From CreationUnion · Just now",
+        "body": "We removed installation limits. Click below to learn how to migrate or distribute licenses."
+      },
+      "actions": {"view":"View policy & guide","later":"View later"}
+    },
+    "highlights": {"title":"Highlights","desc":"This change removes install limits, simplifies licensing, and adds migration and team distribution."},
+    "stat1": {"value":"One purchase","label":"Purchase once and install on any device"},
+    "stat2": {"value":"Device migration","label":"Unlink and migrate licenses between devices"},
+    "stat3": {"value":"Team distribution","label":"Support bulk distribution for teams"},
+    "stat4": {"value":"Multi-language","label":"Page and help center available in multiple languages"},
+    "features": {"title":"What's included","desc":"We improved license management, device migration, and team distribution."},
+    "feature1": {"title":"No install limits","desc":"VIP users are no longer restricted by device counts."},
+    "feature2": {"title":"Device migration","desc":"Unlink and move licenses when changing devices or reinstalling."},
+    "feature3": {"title":"Team distribution","desc":"Easier configuration and bulk distribution for organizations."},
+    "benefits": {"title":"Why it matters","desc":"Simplified licensing reduces support costs and improves user satisfaction."},
+    "benefit1": {"title":"Simpler purchases","desc":"One purchase removes need for repeated payments or device registration."},
+    "benefit2": {"title":"Flexible device management","desc":"Supports unlinking and migration for device changes."},
+    "benefit3": {"title":"Enterprise friendly","desc":"Team distribution and bulk config reduce operational burden."},
+    "scenarios": {"title":"Use cases","desc":"Personal, family multi-device, and enterprise deployments benefit."},
+    "scenario1": {"title":"Home & Personal","li1":"Use same license across family devices","li2":"Quickly migrate license when replacing devices","li3":"Use across multiple personal devices"},
+    "scenario2": {"title":"Business & Education","li1":"Bulk distribution to teams","li2":"Classroom and multi-terminal deployments","li3":"Simplified management and license reclamation"},
+    "cta": {"title":"Check the VIP policy now","desc":"Read full instructions, FAQs and device migration steps; team plans available.","button":"Back to products"},
+    "backLink": "← Back to home"
+  },
   "about": {"title":"About robinsoft","heading":"About us","p":"robinsoft is a development team focused on multimedia and cloud services. Our goal is to deliver stable, simple and powerful applications to users.","contactLine":"<strong>Contact:</strong> <em>robinsoft.test01@gmail.com</em>"}
 }

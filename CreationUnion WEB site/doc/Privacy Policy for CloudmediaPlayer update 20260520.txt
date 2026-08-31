@@ -14,7 +14,7 @@ If you choose to sign in with a Google account, we may process:
 - OAuth tokens used for sign-in and account binding
 - an app-account ID used for local account binding
 
-We use this information to sign you in, maintain your session, bind VIP / license status, and keep your app account separate from other accounts on the device.
+We use this information to sign you in and maintain your session. VIP / license entitlement is determined by the Google Play Billing/subscription state on the device (the App checks the local Google Play entitlement state) and is not bound to the App's sign-in account. We do not use the app account to enforce VIP across devices; entitlement follows the purchase/subscription state managed through Google Play.
 
 We request only the minimum Google OAuth scopes needed for these features, including: `openid`, `email`, `profile`, `https://www.googleapis.com/auth/drive.appdata`, `https://www.googleapis.com/auth/drive.readonly`, `https://www.googleapis.com/auth/userinfo.email`, and `https://www.googleapis.com/auth/userinfo.profile`.
 
@@ -61,7 +61,7 @@ App account tokens and related app profile data are stored in an encrypted local
 Cloud drive tokens and cached directory data are stored inside the App's encrypted profile structure and kept separate from other app data.
 
 2.3 License / VIP data
-Local VIP / license state is stored in app-private `SharedPreferences` and used only for app-side eligibility checks.
+VIP / license entitlement is determined from Google Play Billing on the device. The App may cache the local entitlement state in app-private `SharedPreferences` to avoid repeated Play queries and to perform app-side eligibility checks. This cached value is used only locally; the ultimate source of truth for entitlement is Google Play.
 
 2.4 Media metadata
 Media metadata is stored in the App's local database inside app-private storage.

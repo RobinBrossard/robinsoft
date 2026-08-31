@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="CreationUnion APP 消息通知功能宣传页，了解新消息提醒、分级通知与灵活跳转能力。">
-  <title>消息通知功能上线 - CreationUnion</title>
+  <meta name="description" content="CreationUnion VIP 策略重大更新：取消安装限制，支持一次购买、任意安装。请使用页面语言切换查看其他语言版本。">
+  <title>VIP 策略重大更新 - CreationUnion</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
     body.appnews-page{
@@ -291,6 +291,12 @@
       .appnews-page .cta-card{align-items:flex-start;}
     }
   </style>
+  <script>
+    // tell i18n which key to use as document.title for this page
+    window.i18n = window.i18n || {};
+    window.i18n.pageTitleKey = 'vip.pageTitle';
+  </script>
+  <script src="../js/i18n.js" defer></script>
 </head>
 <body class="appnews-page">
   <header class="site-header site-top">
@@ -298,6 +304,14 @@
     <div class="site-nav-shell">
       <div class="container site-nav-inner">
         <a class="brand brand-link" href="../index.html">robinsoft</a>
+        <!-- 简单的语言切换选择器，调用已加载的 i18n 脚本 -->
+        <label for="langSelect" style="margin-left:0.6rem;display:inline-block;vertical-align:middle;font-weight:600;">语言</label>
+        <select id="langSelect" onchange="(window.i18n && window.i18n.setLang) ? window.i18n.setLang(this.value) : null" style="margin-left:0.35rem;vertical-align:middle;">
+          <option value="en">English</option>
+          <option value="zh_CN" selected>简体中文</option>
+          <option value="zh_TW">繁體中文</option>
+          <option value="fr">Français</option>
+        </select>
         <nav class="main-nav" aria-label="主导航">
           <a href="../index.html">首页</a>
           <a href="../products.html">产品</a>
@@ -311,41 +325,36 @@
     <section class="hero-shell">
       <div class="hero-inner hero-grid">
         <div>
-          <div class="eyebrow">NEW · APP NEWS</div>
-          <h1 class="hero-title">消息通知功能已上线</h1>
-          <p class="hero-copy">
-            现在，CreationUnion APP 可以更及时地向你传递重要提醒、活动通知和功能更新。
-            我们为通知体验设计了更清晰的层级、更顺畅的跳转，以及更友好的展示样式。
-          </p>
+          <div class="eyebrow" data-i18n="vip.eyebrow">重大更新 · VIP 策略</div>
+          <h1 class="hero-title" data-i18n="vip.title">VIP 策略重大更新</h1>
+          <p class="hero-copy" data-i18n="vip.hero_copy">我们已取消安装数量限制：从现在起，VIP 用户一次购买即可在任意设备上安装和激活，无需额外付费或登记每台设备。</p>
           <div class="hero-actions">
-            <a class="btn" href="#features">立即了解</a>
-            <a class="ghost-btn" href="#scenarios">查看使用场景</a>
+            <a class="btn" href="#features" data-i18n="vip.btn_learn">了解详情</a>
+            <a class="ghost-btn" href="#scenarios" data-i18n="vip.btn_scenarios">查看使用场景</a>
           </div>
           <div class="tag-row" aria-label="功能标签">
-            <span>实时提醒</span>
-            <span>可关闭</span>
-            <span>多语言支持</span>
-            <span>优先级展示</span>
+            <span data-i18n="vip.tag1">一次购买</span>
+            <span data-i18n="vip.tag2">任意安装</span>
+            <span data-i18n="vip.tag3">多人共享</span>
+            <span data-i18n="vip.tag4">多语言支持</span>
           </div>
         </div>
 
         <aside class="preview-panel" aria-label="通知预览示意">
-          <h2>通知预览</h2>
-          <p style="color:rgba(255,255,255,0.9);">像真实应用弹窗一样，第一时间抓住用户注意力。</p>
+          <h2 data-i18n="vip.preview.title">政策预览</h2>
+          <p style="color:rgba(255,255,255,0.9);" data-i18n="vip.preview.copy">VIP 策略更新示意：一次购买，任意安装，支持设备迁移与解绑。</p>
           <div class="preview-notice">
             <div class="notice-top">
-              <div class="notice-icon" aria-hidden="true">🔔</div>
+              <div class="notice-icon" aria-hidden="true">⭐</div>
               <div>
-                <div class="notice-title">新功能提醒</div>
-                <div class="notice-meta">来自 CreationUnion APP · 1 分钟前</div>
+                <div class="notice-title" data-i18n="vip.preview.notice.title">VIP 策略变更通知</div>
+                <div class="notice-meta" data-i18n="vip.preview.notice.meta">来自 CreationUnion · 刚刚</div>
               </div>
             </div>
-            <div class="notice-body">
-              我们新增了消息通知功能，点击下方链接即可了解如何使用。
-            </div>
+            <div class="notice-body" data-i18n="vip.preview.notice.body">我们已移除安装上限。点击下方链接查看如何在多设备间迁移授权或为团队分发。</div>
             <div class="notice-actions">
-              <a href="#cta">立即查看</a>
-              <a class="secondary" href="#benefits">稍后了解</a>
+              <a href="#cta" data-i18n="vip.preview.actions.view">查看策略与说明</a>
+              <a class="secondary" href="#benefits" data-i18n="vip.preview.actions.later">稍后查看</a>
             </div>
           </div>
         </aside>
@@ -353,96 +362,96 @@
     </section>
 
     <section class="section-inner content-shell" id="highlights" style="margin-top:1rem;">
-      <h2 class="section-title">亮点一览</h2>
-      <p class="section-desc">我们把消息通知做成了一个既实用又有表现力的模块，让重要信息更容易被看到、被理解、被处理。</p>
+      <h2 class="section-title" data-i18n="vip.highlights.title">要点速览</h2>
+      <p class="section-desc" data-i18n="vip.highlights.desc">本次 VIP 策略更新将取消安装限制，简化授权流程，并提供设备迁移与团队分发支持。</p>
       <div class="stats-grid">
         <article class="stat-card">
-          <div class="stat-value">1 秒内</div>
-          <div class="stat-label">快速触达，重要内容及时送达用户视野</div>
+          <div class="stat-value" data-i18n="vip.stat1.value">一次购买</div>
+          <div class="stat-label" data-i18n="vip.stat1.label">一次购买即可在任意设备上安装与激活</div>
         </article>
         <article class="stat-card">
-          <div class="stat-value">3 层级</div>
-          <div class="stat-label">支持普通提醒、重点提醒与高优先级通知</div>
+          <div class="stat-value" data-i18n="vip.stat2.value">设备迁移</div>
+          <div class="stat-label" data-i18n="vip.stat2.label">支持设备解绑与授权迁移，方便更换或重装设备</div>
         </article>
         <article class="stat-card">
-          <div class="stat-value">4 语言</div>
-          <div class="stat-label">覆盖中文简体、繁体、英文与法文场景</div>
+          <div class="stat-value" data-i18n="vip.stat3.value">团队分发</div>
+          <div class="stat-label" data-i18n="vip.stat3.label">支持企业/团队一次性配置与分发授权</div>
         </article>
         <article class="stat-card">
-          <div class="stat-value">可关闭</div>
-          <div class="stat-label">支持用户自主关闭，保持良好的使用体验</div>
+          <div class="stat-value" data-i18n="vip.stat4.value">多语言</div>
+          <div class="stat-label" data-i18n="vip.stat4.label">页面与帮助中心提供多语言支持</div>
         </article>
       </div>
     </section>
 
     <section class="section-inner content-shell" id="features" style="margin-top:1rem;">
-      <h2 class="section-title">功能设计</h2>
-      <p class="section-desc">从视觉层级到交互反馈，我们都做了细致打磨，确保这项新能力既醒目又不打扰。</p>
+      <h2 class="section-title" data-i18n="vip.features.title">本次更新包含</h2>
+      <p class="section-desc" data-i18n="vip.features.desc">我们在授权管理、设备迁移与团队分发上做了核心改进，提升用户体验并简化购买流程。</p>
       <div class="feature-grid">
         <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">⚡</div>
-          <h3>即时弹出</h3>
-          <p>在关键节点即时展示，帮助用户第一时间了解活动、系统提示或版本更新。</p>
+          <div class="feature-icon" aria-hidden="true">🔓</div>
+          <h3 data-i18n="vip.feature1.title">取消安装上限</h3>
+          <p data-i18n="vip.feature1.desc">VIP 用户不再受设备数量限制，可在任意设备上使用相同授权。</p>
         </article>
         <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">🎯</div>
-          <h3>分级呈现</h3>
-          <p>不同重要程度的内容采用不同展示策略，提升信息效率，降低视觉噪音。</p>
+          <div class="feature-icon" aria-hidden="true">🔁</div>
+          <h3 data-i18n="vip.feature2.title">设备迁移</h3>
+          <p data-i18n="vip.feature2.desc">提供设备解绑和迁移流程，方便更换设备或重装系统后恢复授权。</p>
         </article>
         <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">🪄</div>
-          <h3>跳转清晰</h3>
-          <p>点击行动按钮即可快速进入详情页，让用户从通知到内容的路径更短、更顺畅。</p>
+          <div class="feature-icon" aria-hidden="true">👥</div>
+          <h3 data-i18n="vip.feature3.title">团队分发</h3>
+          <p data-i18n="vip.feature3.desc">支持企业与小团队的一次配置和批量分发授权，降低运维成本。</p>
         </article>
       </div>
     </section>
 
     <section class="section-inner content-shell" id="benefits" style="margin-top:1rem;">
-      <h2 class="section-title">为什么值得关注</h2>
-      <p class="section-desc">这次更新不仅是“增加一个提醒”，而是为 APP 的信息触达建立更完整的表达方式。</p>
+      <h2 class="section-title" data-i18n="vip.benefits.title">为何这次更新重要</h2>
+      <p class="section-desc" data-i18n="vip.benefits.desc">简化授权能够减少用户支持成本，提高用户满意度，并使团队部署更灵活。</p>
       <div class="timeline">
         <article class="timeline-item">
           <div class="timeline-index">01</div>
           <div>
-            <h3>更高的曝光效率</h3>
-            <p>重要消息不再隐藏在页面深处，而是在用户打开页面时便能被快速发现。</p>
+            <h3 data-i18n="vip.benefit1.title">简化购买流程</h3>
+            <p data-i18n="vip.benefit1.desc">一次购买后无需重复付费或登记设备即可使用，购买路径更直接。</p>
           </div>
         </article>
         <article class="timeline-item">
           <div class="timeline-index">02</div>
           <div>
-            <h3>更好的内容组织</h3>
-            <p>通知内可以承载标题、正文、按钮与跳转链接，形成完整的信息闭环。</p>
+            <h3 data-i18n="vip.benefit2.title">更灵活的设备管理</h3>
+            <p data-i18n="vip.benefit2.desc">支持解绑与迁移，方便更换设备或在新设备上恢复授权。</p>
           </div>
         </article>
         <article class="timeline-item">
           <div class="timeline-index">03</div>
           <div>
-            <h3>更稳定的品牌呈现</h3>
-            <p>统一的视觉语言让通知也能延续 CreationUnion 的品牌气质，增强产品专业感。</p>
+            <h3 data-i18n="vip.benefit3.title">企业友好</h3>
+            <p data-i18n="vip.benefit3.desc">团队分发与批量配置减少运维负担，适合企业部署与教育/机构场景。</p>
           </div>
         </article>
       </div>
     </section>
 
     <section class="section-inner content-shell" id="scenarios" style="margin-top:1rem;">
-      <h2 class="section-title">适用场景</h2>
-      <p class="section-desc">无论是功能升级、运营活动，还是系统公告，这套通知展示方式都能灵活适配。</p>
+      <h2 class="section-title" data-i18n="vip.scenarios.title">适用场景</h2>
+      <p class="section-desc" data-i18n="vip.scenarios.desc">无论是个人用户、家庭多设备，还是企业部署，本次 VIP 政策都能更灵活地满足需求。</p>
       <div class="scenario-grid">
         <article class="scenario-card">
-          <h3>运营通知</h3>
+          <h3 data-i18n="vip.scenario1.title">家庭与个人</h3>
           <ul class="scenario-list">
-            <li>活动开启与结束提醒</li>
-            <li>限时福利与专题内容推广</li>
-            <li>节日活动与版本运营公告</li>
+            <li data-i18n="vip.scenario1.li1">多设备家庭使用同一授权</li>
+            <li data-i18n="vip.scenario1.li2">设备更换后快速迁移授权</li>
+            <li data-i18n="vip.scenario1.li3">个人多个设备同步使用</li>
           </ul>
         </article>
         <article class="scenario-card">
-          <h3>产品更新</h3>
+          <h3 data-i18n="vip.scenario2.title">企业与教育</h3>
           <ul class="scenario-list">
-            <li>新功能上线提示</li>
-            <li>关键体验优化说明</li>
-            <li>帮助文档与使用指引入口</li>
+            <li data-i18n="vip.scenario2.li1">一次购买批量分发给团队</li>
+            <li data-i18n="vip.scenario2.li2">支持教室与多终端部署</li>
+            <li data-i18n="vip.scenario2.li3">简化设备管理与授权回收</li>
           </ul>
         </article>
       </div>
@@ -451,13 +460,13 @@
     <section class="section-inner" id="cta" style="padding:1rem 0 0;">
       <div class="cta-card">
         <div>
-          <h2>现在就去看看新功能</h2>
-          <p>点击通知按钮，了解消息通知功能如何帮助你的 APP 传递更重要的信息。</p>
+          <h2 data-i18n="vip.cta.title">立即查看 VIP 策略更新</h2>
+          <p data-i18n="vip.cta.desc">阅读完整说明、常见问题与设备迁移步骤，我们也提供团队授权支持方案。</p>
         </div>
-        <a class="btn" href="../products.html">返回产品页</a>
+        <a class="btn" href="../products.html" data-i18n="vip.cta.button">返回产品页</a>
       </div>
       <p style="margin:0.85rem 0 0;">
-        <a class="back-link" href="../index.html">← 回到首页</a>
+        <a class="back-link" href="../index.html" data-i18n="vip.backLink">← 回到首页</a>
       </p>
     </section>
   </main>
