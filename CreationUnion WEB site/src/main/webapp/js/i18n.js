@@ -5,14 +5,18 @@
    - updates elements with data-i18n attributes
 */
 (function(){
-  const DEFAULT = 'en';
+  // project uses Simplified Chinese as the no-suffix default HTML (message-notification.html)
+  // set DEFAULT to 'zh_CN' so getLocalizedPath maps no-suffix files to Simplified Chinese
+  const DEFAULT = 'zh_CN';
   const SUPPORTED = ['en','zh_CN','zh_TW','fr'];
   const REDIRECTABLE_STEMS = new Set([
     'copyright-notice',
     'help-center',
     'payment-policy',
     'privacy-policy',
-    'terms-of-service'
+    'terms-of-service',
+    // add appnews message notification page so language switching can redirect
+    'message-notification'
   ]);
   function normalizeLang(l){
     if(!l) return DEFAULT;

@@ -9,28 +9,30 @@
   <style>
     /* ...existing styles (same as original) ... */
   </style>
+  <script>
+    // tell i18n which key to use as document.title for this page
+    window.i18n = window.i18n || {};
+    window.i18n.pageTitleKey = 'vip.pageTitle';
+  </script>
+  <script src="../js/i18n.js" defer></script>
 </head>
 <body class="appnews-page">
   <header class="site-header site-top">
     <div class="site-banner" aria-hidden="true"></div>
     <div class="site-nav-shell">
       <div class="container site-nav-inner">
-        <a class="brand brand-link" href="../index.html">robinsoft</a>
+        <a class="brand brand-link" href="../index.html" data-i18n="brand">robinsoft</a>
         <label for="langSelect" style="margin-left:0.6rem;display:inline-block;vertical-align:middle;font-weight:600;">Langue</label>
-        <select id="langSelect" style="margin-left:0.35rem;vertical-align:middle;" onchange="(function(v){
-            const map = {en:'message-notification.en.html', zh_CN:'message-notification.html', zh_TW:'message-notification.zh_TW.html', fr:'message-notification.fr.html'};
-            const target = map[v] || 'message-notification.fr.html';
-            location.href = target;
-          })(this.value)">
+        <select id="langSelect" style="margin-left:0.35rem;vertical-align:middle;" onchange="(window.i18n && window.i18n.setLang) ? window.i18n.setLang(this.value) : null">
           <option value="en">English</option>
           <option value="zh_CN">简体中文</option>
           <option value="zh_TW">繁體中文</option>
           <option value="fr" selected>Français</option>
         </select>
         <nav class="main-nav" aria-label="navigation principale">
-          <a href="../index.html">Accueil</a>
-          <a href="../products.html">Produits</a>
-          <a href="../about.html">À propos</a>
+          <a href="../index.html" data-i18n="nav.home">Accueil</a>
+          <a href="../products.html" data-i18n="nav.products">Produits</a>
+          <a href="../about.html" data-i18n="nav.about">À propos</a>
         </nav>
       </div>
     </div>
