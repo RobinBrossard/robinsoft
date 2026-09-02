@@ -5,9 +5,9 @@
    - updates elements with data-i18n attributes
 */
 (function(){
-  // project uses Simplified Chinese as the no-suffix default HTML (message-notification.html)
-  // set DEFAULT to 'zh_CN' so getLocalizedPath maps no-suffix files to Simplified Chinese
-  const DEFAULT = 'zh_CN';
+  // project uses English as the no-suffix default HTML
+  // set DEFAULT to 'en' so getLocalizedPath maps no-suffix files to English
+  const DEFAULT = 'en';
   const SUPPORTED = ['en','zh_CN','zh_TW','fr'];
   const REDIRECTABLE_STEMS = new Set([
     'copyright-notice',
@@ -18,6 +18,9 @@
     // add appnews message notification page so language switching can redirect
     'message-notification'
   ]);
+  // Per-page canonical language for no-suffix HTML.
+  // If a stem is not listed, DEFAULT is used as the no-suffix language.
+  const STEM_NO_SUFFIX_LANG = {};
   function normalizeLang(l){
     if(!l) return DEFAULT;
     l = l.replace('-', '_');
@@ -85,7 +88,8 @@
 
   function getDocInfo(){
     const path = (window.location && window.location.pathname) ? window.location.pathname : '';
-    const m = path.match(/^(.*\/)?([^/]+?)(?:\.(zh_CN|zh_TW|fr))?\.html$/i);
+    // include 'en' suffix as well so files like foo.en.html are recognized
+    const m = path.match(/^(.*\/)?([^/]+?)(?:\.(zh_CN|zh_TW|fr|en))?\.html$/i);
     if(!m) return null;
     return {
       dir: m[1] || '',
@@ -107,12 +111,24 @@
     return info && info.suffix ? info.suffix : null;
   }
 
-  function getLocalizedPath(lang){
+  async function getLocalizedPath(lang){
     const info = getDocInfo();
     if(!info || !REDIRECTABLE_STEMS.has(info.stem)) return null;
     const normalized = normalizeLang(lang);
-    const file = normalized === DEFAULT ? info.stem + '.html' : info.stem + '.' + normalized + '.html';
-    return (info.dir || '/') + file;
+    const dir = info.dir || '/';
+    const suffixed = dir + info.stem + '.' + normalized + '.html';
+    const noSuffix = dir + info.stem + '.html';
+    // Prefer a page's canonical no-suffix language first, then fall back.
+    const stemDefault = normalizeLang(STEM_NO_SUFFIX_LANG[info.stem] || DEFAULT);
+    const candidates = normalized === stemDefault ? [noSuffix, suffixed] : [suffixed, noSuffix];
+    try{
+      for(let i=0;i<candidates.length;i++){
+        const target = candidates[i];
+        const res = await fetch(target, {method: 'GET', cache: 'no-store'});
+        if(res.ok) return target;
+      }
+    }catch(e){/* network errors - ignore and return null */}
+    return null;
   }
 
   function getInitialLang(){
@@ -120,7 +136,20 @@
     const pathLang = getLangFromPath();
     const stored = localStorage.getItem('site_lang');
     const nav = navigator.language || navigator.userLanguage;
-    return urlLang || pathLang || stored || nav || DEFAULT;
+    // If the current document path already encodes a language (pathLang) or
+    // the user explicitly set a language (stored) or provided via URL, honor it.
+    if(urlLang) return urlLang;
+    if(pathLang) return pathLang;
+    if(stored) return stored;
+    const info = getDocInfo();
+    // For pages without a suffix (no-suffix file), prefer the document's declared
+    // language (the <html lang="..."> attribute) if available; otherwise fall back to DEFAULT.
+    if(info && !info.suffix){
+      const docLang = (document.documentElement && document.documentElement.lang) ? document.documentElement.lang : null;
+      if(docLang) return normalizeLang(docLang);
+      return DEFAULT;
+    }
+    return nav || DEFAULT;
   }
 
   async function setLang(lang){
@@ -139,7 +168,7 @@
     const titleValue = titleKey === 'title' ? (res && res.title) : resolveKey(res, titleKey);
     if(titleValue !== undefined) document.title = titleValue;
 
-    const targetPath = getLocalizedPath(lang);
+    const targetPath = await getLocalizedPath(lang);
     if(targetPath && targetPath !== window.location.pathname){
       const search = window.location.search || '';
       const hash = window.location.hash || '';
@@ -149,9 +178,9 @@
   }
 
   // init
-  document.addEventListener('DOMContentLoaded', function(){
+  document.addEventListener('DOMContentLoaded', async function(){
     const pick = getInitialLang();
-    setLang(pick);
+    await setLang(pick);
     // expose setter
     window.i18n = window.i18n || {};
     window.i18n.setLang = setLang;
