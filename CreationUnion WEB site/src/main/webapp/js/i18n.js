@@ -18,6 +18,10 @@
     // add appnews message notification page so language switching can redirect
     'message-notification'
   ]);
+  // Stems rendered from one shared no-suffix template for every locale.
+  const NO_SUFFIX_ONLY_STEMS = new Set([
+    'message-notification'
+  ]);
   // Per-page canonical language for no-suffix HTML.
   // If a stem is not listed, DEFAULT is used as the no-suffix language.
   const STEM_NO_SUFFIX_LANG = {};
@@ -118,6 +122,7 @@
     const dir = info.dir || '/';
     const suffixed = dir + info.stem + '.' + normalized + '.html';
     const noSuffix = dir + info.stem + '.html';
+    if(NO_SUFFIX_ONLY_STEMS.has(info.stem)) return noSuffix;
     // Prefer a page's canonical no-suffix language first, then fall back.
     const stemDefault = normalizeLang(STEM_NO_SUFFIX_LANG[info.stem] || DEFAULT);
     const candidates = normalized === stemDefault ? [noSuffix, suffixed] : [suffixed, noSuffix];
