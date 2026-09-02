@@ -12,10 +12,26 @@
       margin: 0;
       background: linear-gradient(180deg, #f7faff 0%, #edf3ff 100%);
       color: #0f172a;
+    }
+    .appnews-page .site-top {
+      margin-bottom: 1rem;
+    }
+    .appnews-page .site-banner {
+      height: clamp(78px, 9vw, 132px);
+    }
+    .appnews-page .site-nav-shell {
+      background: rgba(255, 255, 255, 0.96);
+    }
+    .appnews-page .site-top .brand-link {
+      font-size: 1.05rem;
+    }
+    .appnews-page .site-top .main-nav a {
+      padding: 0.5rem 0.85rem;
+    }
+    .appnews-page .page-wrap {
+      padding: 0 1.25rem 1.25rem;
       display: flex;
-      align-items: center;
       justify-content: center;
-      padding: 1.25rem;
     }
     .appnews-page .hero-card {
       width: min(760px, 100%);
@@ -35,11 +51,6 @@
       background: #eaf1ff;
       border-radius: 999px;
     }
-    .appnews-page h1 {
-      margin: 0 0 0.9rem;
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      line-height: 1.2;
-    }
     .appnews-page p {
       margin: 0;
       line-height: 1.75;
@@ -47,12 +58,43 @@
       font-size: 1.03rem;
     }
   </style>
+  <script src="../js/include.js" defer></script>
 </head>
 <body class="appnews-page">
-  <main class="hero-card" aria-label="VIP 策略更新通知">
-    <p class="eyebrow">重大更新 · VIP 策略</p>
-    <h1>VIP 策略重大更新</h1>
-    <p>我们已取消安装数量限制：从现在起，VIP 用户一次购买即可在任意设备上安装和激活，无需额外付费或逐一登记设备。</p>
-  </main>
+  <header class="site-header site-top">
+    <div class="site-banner" aria-hidden="true"></div>
+    <div class="site-nav-shell">
+      <div class="container site-nav-inner">
+        <a class="brand brand-link" href="../index.html">robinsoft</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" data-nav-toggle>
+          <span class="nav-toggle__icon" aria-hidden="true"><span></span></span>
+          <span>菜单</span>
+        </button>
+        <div class="site-nav-panel" id="primaryNav" data-nav-panel>
+          <nav class="main-nav" aria-label="主导航">
+            <a href="../index.html" data-nav-path="index.html">首页</a>
+            <a href="../products.html" data-nav-path="products.html">产品</a>
+            <a href="../about.html" data-nav-path="about.html">关于我们</a>
+          </nav>
+        </div>
+        <label class="lang-switcher" for="langSelect">
+          <span class="sr-only">语言选择</span>
+          <select id="langSelect" class="lang-select" aria-label="语言选择">
+            <option value="en">English</option>
+            <option value="zh_CN" selected>简体中文</option>
+            <option value="zh_TW">繁体中文</option>
+            <option value="fr">Français</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-wrap">
+    <main class="hero-card" aria-label="VIP 策略更新通知">
+      <p class="eyebrow">重大更新 · VIP 策略</p>
+      <p>我们已取消安装数量限制：从现在起，VIP 用户一次购买即可在任意设备上安装和激活，无需额外付费或逐一登记设备。</p>
+    </main>
+  </div>
 </body>
 </html>
