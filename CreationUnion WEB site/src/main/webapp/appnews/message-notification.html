@@ -3,11 +3,293 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="CreationUnion VIP policy update: installation limits removed — one purchase, install on any device. Use the language selector to switch." />
-  <title>VIP Policy Update - CreationUnion</title>
+  <meta name="description" content="Major CreationUnion VIP policy update: installation limits are removed. Buy once and install on any device. Use the language selector to switch versions.">
+  <title>Major VIP Policy Update - CreationUnion</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    /* ...existing styles (same as original) ... */
+    body.appnews-page{
+      background:
+        radial-gradient(circle at top left, rgba(11,87,208,0.14), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(95,141,255,0.16), transparent 30%),
+        linear-gradient(180deg,#f8fbff 0%,#eef4ff 100%);
+    }
+    .appnews-page .hero-shell,
+    .appnews-page .content-shell{
+      background:var(--surface);
+      border:1px solid rgba(219,229,245,0.9);
+      box-shadow:var(--shadow);
+      border-radius:24px;
+      overflow:hidden;
+    }
+    .appnews-page .hero-shell{
+      position:relative;
+      color:#fff;
+      background:linear-gradient(135deg,#0b57d0 0%,#2a72f7 45%,#8eb4ff 100%);
+    }
+    .appnews-page .hero-shell::before,
+    .appnews-page .hero-shell::after{
+      content:"";
+      position:absolute;
+      inset:auto;
+      border-radius:50%;
+      background:rgba(255,255,255,0.15);
+      pointer-events:none;
+    }
+    .appnews-page .hero-shell::before{width:220px;height:220px;right:-90px;top:-70px;}
+    .appnews-page .hero-shell::after{width:140px;height:140px;left:-55px;bottom:-45px;}
+    .appnews-page .hero-inner,
+    .appnews-page .section-inner{
+      padding:clamp(1.25rem,2.8vw,2rem);
+    }
+    .appnews-page .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.2fr) minmax(290px,0.8fr);
+      gap:1.25rem;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+    .appnews-page .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:0.45rem;
+      padding:0.38rem 0.75rem;
+      border-radius:999px;
+      background:rgba(255,255,255,0.16);
+      font-size:0.86rem;
+      font-weight:700;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      margin-bottom:0.9rem;
+    }
+    .appnews-page .hero-title{
+      margin:0 0 0.85rem;
+      font-size:clamp(2rem,4vw,3.35rem);
+      line-height:1.08;
+      letter-spacing:-0.02em;
+    }
+    .appnews-page .hero-copy{
+      max-width:66ch;
+      color:rgba(255,255,255,0.92);
+      font-size:1.03rem;
+      margin-bottom:1.25rem;
+    }
+    .appnews-page .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.8rem;
+      margin:1.25rem 0 0.95rem;
+    }
+    .appnews-page .hero-actions .btn,
+    .appnews-page .hero-actions .ghost-btn{
+      padding:0.8rem 1.15rem;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      transition:transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+    }
+    .appnews-page .hero-actions .btn{
+      background:#fff;
+      color:#0b57d0;
+      border:1px solid rgba(255,255,255,0.72);
+    }
+    .appnews-page .hero-actions .btn:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(14,46,104,0.18);background:#f7faff;}
+    .appnews-page .hero-actions .ghost-btn{
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.28);
+      background:rgba(255,255,255,0.09);
+      backdrop-filter:blur(8px);
+    }
+    .appnews-page .hero-actions .ghost-btn:hover{transform:translateY(-1px);background:rgba(255,255,255,0.16);}
+    .appnews-page .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.55rem;
+      margin-top:0.4rem;
+    }
+    .appnews-page .tag-row span,
+    .appnews-page .chip{
+      display:inline-flex;
+      align-items:center;
+      padding:0.38rem 0.7rem;
+      border-radius:999px;
+      font-size:0.88rem;
+      font-weight:600;
+    }
+    .appnews-page .tag-row span{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+    .appnews-page .preview-panel{
+      background:rgba(255,255,255,0.16);
+      border:1px solid rgba(255,255,255,0.22);
+      border-radius:22px;
+      padding:1rem;
+      backdrop-filter:blur(10px);
+      box-shadow:0 18px 40px rgba(16,36,72,0.18);
+      position:relative;
+      z-index:1;
+    }
+    .appnews-page .preview-panel h2,
+    .appnews-page .preview-panel p{margin:0;}
+    .appnews-page .preview-panel h2{font-size:1.05rem;}
+    .appnews-page .preview-notice{
+      margin-top:0.85rem;
+      background:#fff;
+      color:var(--text);
+      border-radius:18px;
+      padding:1rem;
+      display:grid;
+      gap:0.85rem;
+      box-shadow:0 12px 28px rgba(11,26,64,0.14);
+    }
+    .appnews-page .preview-notice .notice-top{
+      display:flex;
+      align-items:flex-start;
+      gap:0.8rem;
+    }
+    .appnews-page .notice-icon{
+      width:3rem;
+      height:3rem;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      flex:0 0 3rem;
+      background:linear-gradient(135deg,#e9f1ff 0%,#cfe0ff 100%);
+      color:#0b57d0;
+      font-size:1.3rem;
+    }
+    .appnews-page .notice-title{font-weight:800;font-size:1.02rem;line-height:1.25;}
+    .appnews-page .notice-meta{color:#667085;font-size:0.9rem;margin-top:0.2rem;}
+    .appnews-page .notice-body{color:#344054;font-size:0.95rem;}
+    .appnews-page .notice-actions{display:flex;gap:0.6rem;flex-wrap:wrap;}
+    .appnews-page .notice-actions a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:2.4rem;
+      padding:0.5rem 0.9rem;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      border:1px solid #dbe5ff;
+      background:#eef4ff;
+      color:#0b57d0;
+    }
+    .appnews-page .notice-actions a.secondary{
+      background:#fff;
+      color:#345;
+      border-color:#e2e8f0;
+    }
+    .appnews-page .stats-grid,
+    .appnews-page .feature-grid,
+    .appnews-page .scenario-grid{
+      display:grid;
+      gap:1rem;
+    }
+    .appnews-page .stats-grid{grid-template-columns:repeat(4,minmax(0,1fr));}
+    .appnews-page .stat-card,
+    .appnews-page .feature-card,
+    .appnews-page .scenario-card,
+    .appnews-page .cta-card{
+      background:#fff;
+      border:1px solid rgba(219,229,245,0.9);
+      border-radius:18px;
+      box-shadow:0 10px 24px rgba(19,36,72,0.06);
+    }
+    .appnews-page .stat-card{padding:1rem 1.05rem;}
+    .appnews-page .stat-value{font-size:1.5rem;font-weight:800;color:#0b57d0;line-height:1.05;}
+    .appnews-page .stat-label{margin-top:0.35rem;color:var(--muted);font-size:0.95rem;}
+    .appnews-page .section-title{
+      margin:0 0 0.4rem;
+      font-size:clamp(1.35rem,2.2vw,1.9rem);
+      line-height:1.2;
+    }
+    .appnews-page .section-desc{
+      margin:0 0 1rem;
+      color:var(--muted);
+      max-width:72ch;
+    }
+    .appnews-page .feature-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+    .appnews-page .feature-card{padding:1.1rem 1.05rem;}
+    .appnews-page .feature-icon{
+      width:2.8rem;height:2.8rem;border-radius:14px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,#eef4ff 0%,#dbe8ff 100%);
+      color:#0b57d0;font-size:1.2rem;
+      margin-bottom:0.85rem;
+    }
+    .appnews-page .feature-card h3{margin:0 0 0.45rem;font-size:1.05rem;}
+    .appnews-page .feature-card p{margin:0;color:var(--muted);}
+    .appnews-page .timeline{
+      display:grid;
+      gap:0.85rem;
+      margin-top:0.25rem;
+    }
+    .appnews-page .timeline-item{
+      display:grid;
+      grid-template-columns:3.25rem minmax(0,1fr);
+      gap:0.95rem;
+      align-items:start;
+      padding:1rem 1.05rem;
+      border-radius:18px;
+      background:#fbfcff;
+      border:1px solid #e4ebfa;
+    }
+    .appnews-page .timeline-index{
+      width:3.25rem;height:3.25rem;border-radius:50%;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,#0b57d0 0%,#2a72f7 100%);
+      color:#fff;font-weight:800;
+      box-shadow:0 10px 18px rgba(11,87,208,0.22);
+    }
+    .appnews-page .timeline-item h3{margin:0 0 0.3rem;font-size:1.03rem;}
+    .appnews-page .timeline-item p{margin:0;color:var(--muted);}
+    .appnews-page .scenario-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .appnews-page .scenario-card{padding:1.1rem 1.05rem;}
+    .appnews-page .scenario-card h3{margin:0 0 0.55rem;font-size:1.05rem;}
+    .appnews-page .scenario-list{margin:0;padding-left:1.15rem;color:var(--muted);}
+    .appnews-page .scenario-list li{margin:0.4rem 0;}
+    .appnews-page .cta-card{
+      padding:1.2rem 1.1rem;
+      background:linear-gradient(135deg,#f5f8ff 0%,#ffffff 100%);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+    .appnews-page .cta-card h2{margin:0 0 0.35rem;font-size:1.4rem;}
+    .appnews-page .cta-card p{margin:0;color:var(--muted);}
+    .appnews-page .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:0.4rem;
+      text-decoration:none;
+      font-weight:700;
+      color:#0b57d0;
+    }
+    .appnews-page .back-link:hover{text-decoration:underline;}
+    .appnews-page .site-top .brand-link{font-size:1.05rem;}
+    .appnews-page .site-top .main-nav a{padding:0.5rem 0.85rem;}
+    .appnews-page .site-top{margin-bottom:1rem;}
+    .appnews-page footer{margin-top:1.15rem;}
+    @media (max-width: 980px){
+      .appnews-page .hero-grid,
+      .appnews-page .stats-grid,
+      .appnews-page .feature-grid,
+      .appnews-page .scenario-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media (max-width: 700px){
+      .appnews-page .hero-grid,
+      .appnews-page .stats-grid,
+      .appnews-page .feature-grid,
+      .appnews-page .scenario-grid{grid-template-columns:1fr;}
+      .appnews-page .hero-actions .btn,
+      .appnews-page .hero-actions .ghost-btn{width:100%;}
+      .appnews-page .cta-card{align-items:flex-start;}
+    }
   </style>
   <script>
     // tell i18n which key to use as document.title for this page
@@ -21,18 +303,19 @@
     <div class="site-banner" aria-hidden="true"></div>
     <div class="site-nav-shell">
       <div class="container site-nav-inner">
-        <a class="brand brand-link" href="../index.html" data-i18n="brand">robinsoft</a>
+        <a class="brand brand-link" href="../index.html">robinsoft</a>
+        <!-- language selector powered by the loaded i18n script -->
         <label for="langSelect" style="margin-left:0.6rem;display:inline-block;vertical-align:middle;font-weight:600;">Language</label>
-        <select id="langSelect" style="margin-left:0.35rem;vertical-align:middle;" onchange="(window.i18n && window.i18n.setLang) ? window.i18n.setLang(this.value) : null">
+        <select id="langSelect" onchange="(window.i18n && window.i18n.setLang) ? window.i18n.setLang(this.value) : null" style="margin-left:0.35rem;vertical-align:middle;">
           <option value="en" selected>English</option>
           <option value="zh_CN">简体中文</option>
           <option value="zh_TW">繁體中文</option>
           <option value="fr">Français</option>
         </select>
-        <nav class="main-nav" aria-label="main navigation">
-          <a href="../index.html" data-i18n="nav.home">Home</a>
-          <a href="../products.html" data-i18n="nav.products">Products</a>
-          <a href="../about.html" data-i18n="nav.about">About</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+          <a href="../products.html">Products</a>
+          <a href="../about.html">About</a>
         </nav>
       </div>
     </div>
@@ -42,36 +325,36 @@
     <section class="hero-shell">
       <div class="hero-inner hero-grid">
         <div>
-          <div class="eyebrow">MAJOR UPDATE · VIP POLICY</div>
-          <h1 class="hero-title">VIP Policy — Major Update</h1>
-          <p class="hero-copy">We've removed installation limits: VIP purchases now allow installation on any number of devices. Learn about migration and team distribution.</p>
+          <div class="eyebrow" data-i18n="vip.eyebrow">MAJOR UPDATE · VIP POLICY</div>
+          <h1 class="hero-title" data-i18n="vip.title">Major VIP Policy Update</h1>
+          <p class="hero-copy" data-i18n="vip.hero_copy">Installation limits are gone. From now on, one VIP purchase lets you install and activate on any device, with no extra fees and no per-device registration.</p>
           <div class="hero-actions">
-            <a class="btn" href="#features">Learn details</a>
-            <a class="ghost-btn" href="#scenarios">See scenarios</a>
+            <a class="btn" href="#features" data-i18n="vip.btn_learn">Learn more</a>
+            <a class="ghost-btn" href="#scenarios" data-i18n="vip.btn_scenarios">View scenarios</a>
           </div>
-          <div class="tag-row" aria-label="tags">
-            <span>One purchase</span>
-            <span>Any install</span>
-            <span>Team sharing</span>
-            <span>Multi-language</span>
+          <div class="tag-row" aria-label="Feature tags">
+            <span data-i18n="vip.tag1">One purchase</span>
+            <span data-i18n="vip.tag2">Any-device install</span>
+            <span data-i18n="vip.tag3">Team sharing</span>
+            <span data-i18n="vip.tag4">Multi-language support</span>
           </div>
         </div>
 
-        <aside class="preview-panel" aria-label="policy preview">
-          <h2>Policy preview</h2>
-          <p style="color:rgba(255,255,255,0.9);">VIP policy update: one purchase, any install. Device migration and unlink supported.</p>
+        <aside class="preview-panel" aria-label="Notification preview">
+          <h2 data-i18n="vip.preview.title">Policy preview</h2>
+          <p style="color:rgba(255,255,255,0.9);" data-i18n="vip.preview.copy">VIP policy preview: one purchase, any-device install, with support for migration and unlinking.</p>
           <div class="preview-notice">
             <div class="notice-top">
               <div class="notice-icon" aria-hidden="true">⭐</div>
               <div>
-                <div class="notice-title">VIP Policy Notice</div>
-                <div class="notice-meta">From CreationUnion · Just now</div>
+                <div class="notice-title" data-i18n="vip.preview.notice.title">VIP Policy Update Notice</div>
+                <div class="notice-meta" data-i18n="vip.preview.notice.meta">From CreationUnion · Just now</div>
               </div>
             </div>
-            <div class="notice-body">We removed installation limits. Click below to learn how to migrate or distribute licenses.</div>
+            <div class="notice-body" data-i18n="vip.preview.notice.body">The installation cap has been removed. Use the links below to learn how to migrate licenses across devices or distribute them to your team.</div>
             <div class="notice-actions">
-              <a href="#cta">View policy & guide</a>
-              <a class="secondary" href="#benefits">View later</a>
+              <a href="#cta" data-i18n="vip.preview.actions.view">View policy and guide</a>
+              <a class="secondary" href="#benefits" data-i18n="vip.preview.actions.later">View later</a>
             </div>
           </div>
         </aside>
@@ -79,96 +362,96 @@
     </section>
 
     <section class="section-inner content-shell" id="highlights" style="margin-top:1rem;">
-      <h2 class="section-title">Highlights</h2>
-      <p class="section-desc">This change removes install limits, simplifies licensing, and adds migration and team distribution support.</p>
+      <h2 class="section-title" data-i18n="vip.highlights.title">Highlights</h2>
+      <p class="section-desc" data-i18n="vip.highlights.desc">This VIP policy update removes install limits, simplifies licensing, and adds support for device migration and team distribution.</p>
       <div class="stats-grid">
         <article class="stat-card">
-          <div class="stat-value">One purchase</div>
-          <div class="stat-label">Purchase once and install on any device</div>
+          <div class="stat-value" data-i18n="vip.stat1.value">One purchase</div>
+          <div class="stat-label" data-i18n="vip.stat1.label">Buy once, then install and activate on any device</div>
         </article>
         <article class="stat-card">
-          <div class="stat-value">Device migration</div>
-          <div class="stat-label">Unlink and migrate licenses between devices</div>
+          <div class="stat-value" data-i18n="vip.stat2.value">Device migration</div>
+          <div class="stat-label" data-i18n="vip.stat2.label">Unlink devices and migrate licenses when replacing or reinstalling</div>
         </article>
         <article class="stat-card">
-          <div class="stat-value">Team distribution</div>
-          <div class="stat-label">Support bulk distribution for teams</div>
+          <div class="stat-value" data-i18n="vip.stat3.value">Team distribution</div>
+          <div class="stat-label" data-i18n="vip.stat3.label">One-time setup and license distribution for organizations and teams</div>
         </article>
         <article class="stat-card">
-          <div class="stat-value">Multi-language</div>
-          <div class="stat-label">Page and help center available in multiple languages</div>
+          <div class="stat-value" data-i18n="vip.stat4.value">Multi-language</div>
+          <div class="stat-label" data-i18n="vip.stat4.label">Page and help center are available in multiple languages</div>
         </article>
       </div>
     </section>
 
     <section class="section-inner content-shell" id="features" style="margin-top:1rem;">
-      <h2 class="section-title">What's included</h2>
-      <p class="section-desc">We improved license management, device migration, and team distribution to simplify purchases and deployment.</p>
+      <h2 class="section-title" data-i18n="vip.features.title">What is included</h2>
+      <p class="section-desc" data-i18n="vip.features.desc">We made key improvements to license management, device migration, and team distribution to simplify purchasing and improve the overall experience.</p>
       <div class="feature-grid">
         <article class="feature-card">
           <div class="feature-icon" aria-hidden="true">🔓</div>
-          <h3>No install limits</h3>
-          <p>VIP users are no longer restricted by device counts.</p>
+          <h3 data-i18n="vip.feature1.title">Install limit removed</h3>
+          <p data-i18n="vip.feature1.desc">VIP users are no longer limited by device count and can use the same license on any device.</p>
         </article>
         <article class="feature-card">
           <div class="feature-icon" aria-hidden="true">🔁</div>
-          <h3>Device migration</h3>
-          <p>Unlink and move licenses when changing devices or reinstalling.</p>
+          <h3 data-i18n="vip.feature2.title">Device migration</h3>
+          <p data-i18n="vip.feature2.desc">Includes unlink and migration flows so you can restore licenses after device replacement or system reinstall.</p>
         </article>
         <article class="feature-card">
           <div class="feature-icon" aria-hidden="true">👥</div>
-          <h3>Team distribution</h3>
-          <p>Easier configuration and bulk distribution for organizations.</p>
+          <h3 data-i18n="vip.feature3.title">Team distribution</h3>
+          <p data-i18n="vip.feature3.desc">Supports one-time setup and bulk license distribution for companies and small teams, reducing operational overhead.</p>
         </article>
       </div>
     </section>
 
     <section class="section-inner content-shell" id="benefits" style="margin-top:1rem;">
-      <h2 class="section-title">Why this matters</h2>
-      <p class="section-desc">Simplified licensing reduces support costs, increases satisfaction, and makes team deployment more flexible.</p>
+      <h2 class="section-title" data-i18n="vip.benefits.title">Why this update matters</h2>
+      <p class="section-desc" data-i18n="vip.benefits.desc">Simpler licensing reduces support overhead, improves user satisfaction, and makes team deployment more flexible.</p>
       <div class="timeline">
         <article class="timeline-item">
           <div class="timeline-index">01</div>
           <div>
-            <h3>Simpler purchases</h3>
-            <p>One purchase removes the need for repeated payments or per-device registration.</p>
+            <h3 data-i18n="vip.benefit1.title">Simplified purchase flow</h3>
+            <p data-i18n="vip.benefit1.desc">After one purchase, there is no need for repeat payments or per-device registration.</p>
           </div>
         </article>
         <article class="timeline-item">
           <div class="timeline-index">02</div>
           <div>
-            <h3>Flexible device management</h3>
-            <p>Support unlinking and migration when replacing devices.</p>
+            <h3 data-i18n="vip.benefit2.title">More flexible device management</h3>
+            <p data-i18n="vip.benefit2.desc">Supports unlinking and migration, making it easy to replace devices or restore licenses on new devices.</p>
           </div>
         </article>
         <article class="timeline-item">
           <div class="timeline-index">03</div>
           <div>
-            <h3>Enterprise friendly</h3>
-            <p>Team distribution and bulk config reduce operational overhead.</p>
+            <h3 data-i18n="vip.benefit3.title">Enterprise-friendly</h3>
+            <p data-i18n="vip.benefit3.desc">Team distribution and bulk setup reduce operational overhead for enterprise, education, and institutional deployments.</p>
           </div>
         </article>
       </div>
     </section>
 
     <section class="section-inner content-shell" id="scenarios" style="margin-top:1rem;">
-      <h2 class="section-title">Use cases</h2>
-      <p class="section-desc">Personal, family multi-device, and enterprise deployments all benefit from this VIP policy.</p>
+      <h2 class="section-title" data-i18n="vip.scenarios.title">Use cases</h2>
+      <p class="section-desc" data-i18n="vip.scenarios.desc">Whether for individuals, families with multiple devices, or enterprise rollout, this VIP policy offers more flexibility.</p>
       <div class="scenario-grid">
         <article class="scenario-card">
-          <h3>Home & Personal</h3>
+          <h3 data-i18n="vip.scenario1.title">Home and personal use</h3>
           <ul class="scenario-list">
-            <li>Use same license across family devices</li>
-            <li>Quickly migrate license when replacing devices</li>
-            <li>Use across multiple personal devices</li>
+            <li data-i18n="vip.scenario1.li1">Use one license across family devices</li>
+            <li data-i18n="vip.scenario1.li2">Quickly migrate licenses after device replacement</li>
+            <li data-i18n="vip.scenario1.li3">Use across multiple personal devices</li>
           </ul>
         </article>
         <article class="scenario-card">
-          <h3>Business & Education</h3>
+          <h3 data-i18n="vip.scenario2.title">Business and education</h3>
           <ul class="scenario-list">
-            <li>Bulk distribution to teams</li>
-            <li>Classroom and multi-terminal deployments</li>
-            <li>Simplified management and license reclamation</li>
+            <li data-i18n="vip.scenario2.li1">Distribute licenses to teams in bulk from a single purchase</li>
+            <li data-i18n="vip.scenario2.li2">Supports classroom and multi-endpoint deployment</li>
+            <li data-i18n="vip.scenario2.li3">Simplifies device management and license recovery</li>
           </ul>
         </article>
       </div>
@@ -177,13 +460,13 @@
     <section class="section-inner" id="cta" style="padding:1rem 0 0;">
       <div class="cta-card">
         <div>
-          <h2>Check the VIP policy now</h2>
-          <p>Read full instructions, FAQs and device migration steps; team plans available.</p>
+          <h2 data-i18n="vip.cta.title">Explore the VIP policy update now</h2>
+          <p data-i18n="vip.cta.desc">Read the full policy details, FAQs, and device migration steps. Team licensing support is also available.</p>
         </div>
-        <a class="btn" href="../products.html">Back to products</a>
+        <a class="btn" href="../products.html" data-i18n="vip.cta.button">Back to products</a>
       </div>
       <p style="margin:0.85rem 0 0;">
-        <a class="back-link" href="../index.html">← Back to home</a>
+        <a class="back-link" href="../index.html" data-i18n="vip.backLink">← Back to home</a>
       </p>
     </section>
   </main>
